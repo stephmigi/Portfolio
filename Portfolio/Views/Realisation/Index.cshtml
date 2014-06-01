@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<ObjectModel.Realisation>
+
+Voici les réalisations auxquelles j'ai pu participer au cours de mes années d'études ainsi qu'à travers des expériences personnelles.
+<div>
+    <ul>
+        @foreach (var real in Model)
+        { 
+            <li>@Html.ActionLink(real.Name, "Detail", new { id = real.Id })</li>
+        }
+    </ul>
+</div>
