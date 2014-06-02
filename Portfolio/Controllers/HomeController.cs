@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObjectModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,10 @@ namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController()
+        {
+            @ViewBag.Active = "Home";
+        }
         public ActionResult Index()
         {
             return View();

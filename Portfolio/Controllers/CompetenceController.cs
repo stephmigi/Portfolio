@@ -9,8 +9,10 @@ namespace Portfolio.Controllers
 {
     public class CompetenceController : Controller
     {
-        //
-        // GET: /Competence/
+        public CompetenceController()
+        {
+            @ViewBag.Active = "Competence";
+        }
 
         public ActionResult Index()
         {

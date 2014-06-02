@@ -9,9 +9,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ObjectModel</RootNamespace>
     <AssemblyName>ObjectModel</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,12 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Competence.cs" />
-    <Compile Include="CompetenceType.cs" />
+    <Compile Include="Realisation\Company.cs" />
+    <Compile Include="Competence\Competence.cs" />
+    <Compile Include="Enums\CompetenceType.cs" />
     <Compile Include="FakeProfileSimulator.cs" />
+    <Compile Include="Enums\IntechSemester.cs" />
+    <Compile Include="Realisation\WorkRealisation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Realisation.cs" />
-    <Compile Include="RealisationType.cs" />
+    <Compile Include="Realisation\Realisation.cs" />
+    <Compile Include="Enums\RealisationType.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Realisation\IntechRealisation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

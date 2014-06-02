@@ -9,8 +9,10 @@ namespace Portfolio.Controllers
 {
     public class RealisationController : Controller
     {
-        //
-        // GET: /Realisation/
+        public RealisationController()
+        {
+            @ViewBag.Active = "Realisation";
+        }
 
         public ActionResult Index()
         {

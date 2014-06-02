@@ -6,11 +6,14 @@
 @model List<ObjectModel.Realisation>
 
 Voici les réalisations auxquelles j'ai pu participer au cours de mes années d'études ainsi qu'à travers des expériences personnelles.
-<div>
-    <ul>
-        @foreach (var real in Model)
-        { 
-            <li>@Html.ActionLink(real.Name, "Detail", new { id = real.Id })</li>
-        }
-    </ul>
-</div>
+
+    @foreach (var real in Model)
+    {
+        <div class="realisation-summary">
+            <img src="~/Content/img/logos/@real.ImageName" />
+            <div>
+                @real.Description.EllipseString(200) 
+                @Html.ActionLink("En savoir plus", "Detail", new { id = real.Id })
+            </div>
+        </div>
+    }

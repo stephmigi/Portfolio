@@ -6,27 +6,30 @@
 @model ObjectModel.Realisation
 <h2>@Model.Name</h2>
 
-<div class ="competence-description">@Model.Description</div>
+<div class ="realisation-description">@Model.Description</div>
+<img src="~/Content/img/logos/@Model.ImageName" class="realisation-logo" />
 
-<div class="competence-detail">
-    <span class ="associated">Les compétences que j'ai pu mettre en pratique lors de ce projet :</span>
-        
+<div class="realisation-detail">
+    <span>Les compétences que j'ai pu mettre en pratique lors de ce projet :</span>
+        <div class="competenceblock">
+            Compétences techniques :
+            <ul>
+                @foreach (var comp in Model.GetCompetencesByType(ObjectModel.CompetenceType.TechnicalProject))
+                {
+                    <li>@Html.ActionLink(comp.Name, "Detail", "Competence", new { id = comp.Id }, null)</li>
+                }
+            </ul>
+        </div>
+    <div class="competenceblock">
+        Compétences Humaines :
         <ul>
-        @foreach (var comp in Model.GetCompetencesByType(ObjectModel.CompetenceType.TechnicalProject))
-        { 
-            
+            @foreach (var comp in Model.GetCompetencesByType(ObjectModel.CompetenceType.HumanProject))
+            {
+
                 <li>@Html.ActionLink(comp.Name, "Detail", "Competence", new { id = comp.Id }, null)</li>
-            
-        }
-</ul>
-    <ul>
-        @foreach (var comp in Model.GetCompetencesByType(ObjectModel.CompetenceType.HumanProject))
-        { 
-            
-                <li>@Html.ActionLink(comp.Name, "Detail", "Competence", new { id = comp.Id }, null)</li>
-            
-        }
+            }
         </ul>
+    </div>
 </div>
 
 

@@ -1,24 +1,81 @@
 ﻿body {
 }
 
+hr {
+    padding:0;
+    margin:0;
+}
+
+/* Layout */
+
 .navbar-default {
-    background-color:black;
+    background-color:white;
     color:grey;
 }
 
 .content {
-    margin-top:70px;
-    margin-left:14px;
+    position:relative;
+    top:70px;
+    left:24px;
+    margin-bottom:85px;
 }
 
-.competence-description {
+/* Realisation summary page */
+
+.realisation-summary{
+    position:relative;
+    height:80px;
+    width:90%;
+    transition: background 0.9s;
+    background: white;
+    padding-top:15px;
+    padding-bottom:15px;
+    border-top:1px solid #eee;
+}
+
+.realisation-summary:hover{
+    transition: background 0.9s;
+    background: #D6D6D6;
+}
+
+.realisation-summary img{
+    position:absolute;
+    top:13px;
+    left:0;
+    height:60px;
+    width:60px;
+}
+
+.realisation-summary div{
+    position:absolute;
+    top:16px;
+    left:85px;
+}
+
+/* Realisation detail page */
+.realisation-description {
     width: 50%;
+    float:left;
 }
 
-.competence-detail {
+.realisation-logo{
+    max-width:250px;
+    max-height:200px;
+    margin-left:50px;
+}
+
+.realisation-detail {
     margin-top:15px;
+    clear:both;
 }
 
-.associated {
+.realisation-detail span {
     text-decoration:underline;
+    display:block;
+    margin-bottom:15px;
+}
+
+.realisation-detail .competenceblock {
+    float:left;
+    width:25%;
 }
