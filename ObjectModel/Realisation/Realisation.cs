@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObjectModel.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,6 +65,13 @@ namespace ObjectModel
         public List<Competence> GetCompetencesByType(CompetenceType type)
         {
             return this.Competences.Where(c => c.Type == type).ToList();
+        }
+
+        public static Realisation GetRealisation(int id)
+        {
+            var db = new SMPortfolioEntities();
+            var realisation = db.Realisations.Where(r => r.Id == id).First();
+            return realisation;
         }
     }
 }
