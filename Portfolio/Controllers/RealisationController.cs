@@ -16,14 +16,14 @@ namespace Portfolio.Controllers
 
         public ActionResult Index()
         {
-            var fake = FakeProfileSimulator.GetAFakeProfile();
-            return View("Index", fake.Realisations);  
+            var realisationList = Realisation.GetAllInstances().ToList();
+            return View("Index", realisationList);  
         }
 
         public ActionResult Detail(int id)
         {
-            var fake = Realisation.GetInstance(id);
-            return View("SimpleDetail", fake);
+            var currentRealisation = Realisation.GetInstance(id);
+            return View("SimpleDetail", currentRealisation);
         }
     }
 }

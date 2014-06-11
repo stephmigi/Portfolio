@@ -84,5 +84,25 @@ namespace ObjectModel
         {
             return new Realisation(dbId);
         }
+
+        public static IEnumerable<Realisation> GetInstances (IEnumerable<int> dbIds)
+        {
+            foreach (int id in dbIds)
+            {
+                yield return GetInstance(id);
+            }
+        }
+
+        public static IEnumerable<Realisation> GetAllInstances()
+        {
+            List<int> ids;
+
+            using (var db = new SMPortfolioEntities())
+            {
+                ids = db.Realisations.Select(r => r.Id).ToList(); ;
+            }
+
+            return GetInstances(ids);
+        }
     }
 }
