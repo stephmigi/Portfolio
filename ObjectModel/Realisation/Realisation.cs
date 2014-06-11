@@ -60,20 +60,15 @@ namespace ObjectModel
         /// <summary>
         /// Private constructor, only use this to
         /// Initialize an instance of realisation with a 
-        /// dbobject id.
+        /// dbobject.
         /// </summary>
         /// <param name="dbId"></param>
-        private Realisation(int dbId)
+        private Realisation(Database.Realisation dbObject)
         {
-            using (var db = new SMPortfolioEntities())
-            {
-                var dbObject = db.Realisations.First(r => r.Id == dbId);
-
-                this.Id = dbObject.Id;
-                this._imageName = dbObject.LogoName;
-                this.Description = dbObject.Description;
-                this.Name = dbObject.Name;
-            }
+            this.Id = dbObject.Id;
+            this._imageName = dbObject.LogoName;
+            this.Description = dbObject.Description;
+            this.Name = dbObject.Name;
         }
 
         #endregion
@@ -111,7 +106,10 @@ namespace ObjectModel
         /// <returns>The realisation</returns>
         public static Realisation GetInstance(int dbId)
         {
-            return new Realisation(dbId);
+            using (var db = new SMPortfolioEntities())
+            {
+                return new Realisation(db.Realisations.First(r => r.Id == dbId));
+            }
         }
 
          /// <summary>
@@ -137,7 +135,7 @@ namespace ObjectModel
 
             using (var db = new SMPortfolioEntities())
             {
-                ids = db.Realisations.Select(r => r.Id).ToList(); ;
+                ids = db.Realisations.Select(r => r.Id).ToList();
             }
 
             return GetInstances(ids);
