@@ -8,7 +8,7 @@ namespace ObjectModel
 {
     public enum CompetenceType
     {
-        TechnicalProject,
-        HumanProject
+        TechnicalProject = 1,
+        HumanProject = 2
     }
 }

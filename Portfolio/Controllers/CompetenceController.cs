@@ -16,14 +16,14 @@ namespace Portfolio.Controllers
 
         public ActionResult Index()
         {
-            var fake = FakeProfileSimulator.GetAFakeProfile();
-            return View("Index", fake.Competences);    
+            var competenceList = Competence.GetAllInstances().ToList();
+            return View("Index", competenceList);    
         }
 
         public ActionResult Detail(int id)
         {
-            var fake = FakeProfileSimulator.GetAFakeProfile();
-            return View("Detail", fake.GetACompetence(id));
+            var currentCompetence = Competence.GetInstance(id);
+            return View("SimpleDetail", currentCompetence);
         }
     }
 }

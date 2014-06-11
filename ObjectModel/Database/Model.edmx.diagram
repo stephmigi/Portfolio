@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c8f00931ca254ef498ec335e0a169e7c" Name="Diagram1">
         <EntityTypeShape EntityType="SMPortfolioModel.Realisation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMPortfolioModel.Competence" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
