@@ -5,8 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="SMPortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Erreurs détectées durant la génération :
-avertissement 6002: La table/vue 'SMPortfolio.dbo.Competence' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="Competence">
           <Key>
             <PropertyRef Name="Id" />
@@ -16,8 +14,6 @@ avertissement 6002: La table/vue 'SMPortfolio.dbo.Competence' n'a pas de clé pr
           <Property Name="Description" Type="text" />
           <Property Name="CompetenceType" Type="int" />
         </EntityType>
-        <!--Erreurs détectées durant la génération :
-avertissement 6002: La table/vue 'SMPortfolio.dbo.Realisation' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="Realisation">
           <Key>
             <PropertyRef Name="Id" />
@@ -28,22 +24,8 @@ avertissement 6002: La table/vue 'SMPortfolio.dbo.Realisation' n'a pas de clé p
           <Property Name="LogoName" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityContainer Name="SMPortfolioModelStoreContainer">
-          <EntitySet Name="Competence" EntityType="Self.Competence" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Competence].[Id] AS [Id], 
-    [Competence].[Name] AS [Name], 
-    [Competence].[Description] AS [Description], 
-    [Competence].[CompetenceType] AS [CompetenceType]
-    FROM [dbo].[Competence] AS [Competence]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Realisation" EntityType="Self.Realisation" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Realisation].[Id] AS [Id], 
-    [Realisation].[Name] AS [Name], 
-    [Realisation].[Description] AS [Description], 
-    [Realisation].[LogoName] AS [LogoName]
-    FROM [dbo].[Realisation] AS [Realisation]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Competence" EntityType="Self.Competence" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Realisation" EntityType="Self.Realisation" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
