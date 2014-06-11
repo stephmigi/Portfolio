@@ -74,6 +74,8 @@ namespace ObjectModel
         #endregion
 
         #region public methods
+        
+        [Obsolete("To be deleted soon.")]
         public void AddCompetence(Competence comp)
         {
             if (comp == null || this.Competences.Contains(comp))
@@ -82,6 +84,7 @@ namespace ObjectModel
             this.Competences.Add(comp);
         }
 
+        [Obsolete("To be deleted soon.")]
         public void AddCompetences(List<Competence> comp)
         {
             foreach (var c in comp)
@@ -90,6 +93,7 @@ namespace ObjectModel
             }
         }
 
+        [Obsolete("To be deleted soon.")]
         public List<Competence> GetCompetencesByType(CompetenceType type)
         {
             return this.Competences.Where(c => c.Type == type).ToList();
@@ -97,18 +101,23 @@ namespace ObjectModel
 
         #endregion
 
-        #region static
+        #region static methods
 
         /// <summary>
         /// Get an instance of a realisation from database
         /// </summary>
         /// <param name="dbId">The object's database id</param>
-        /// <returns>The realisation</returns>
+        /// <returns>The realisation or null if it doesn't exist</returns>
         public static Realisation GetInstance(int dbId)
         {
             using (var db = new SMPortfolioEntities())
             {
-                return new Realisation(db.Realisations.First(r => r.Id == dbId));
+                var dbObject = db.Realisations.SingleOrDefault(r => r.Id == dbId);
+                if (dbObject != null)
+                {
+                    return new Realisation(dbObject);
+                }
+                return null;
             }
         }
 
@@ -116,7 +125,7 @@ namespace ObjectModel
          /// Get multiple instances of Realisation
          /// </summary>
          /// <param name="dbIds">List of database object ids</param>
-         /// <returns>The list of realisations</returns>
+         /// <returns>The Enumerable of realisations</returns>
         public static IEnumerable<Realisation> GetInstances (IEnumerable<int> dbIds)
         {
             foreach (int id in dbIds)
