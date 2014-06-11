@@ -22,8 +22,8 @@ namespace Portfolio.Controllers
 
         public ActionResult Detail(int id)
         {
-            var fake = FakeProfileSimulator.GetAFakeProfile();
-            return View("Detail", fake.GetARealisation(id));
+            var fake = Realisation.GetInstance(id);
+            return View("SimpleDetail", fake);
         }
     }
 }

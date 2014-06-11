@@ -46,6 +46,19 @@ namespace ObjectModel
             this._imageName = imageName;
         }
 
+        private Realisation(int dbId)
+        {
+            using (var db = new SMPortfolioEntities())
+            {
+                var dbObject = db.Realisations.First(r => r.Id == dbId);
+
+                this.Id = dbObject.Id;
+                this._imageName = dbObject.LogoName;
+                this.Description = dbObject.Description;
+                this.Name = dbObject.Name;
+            }
+        }
+
         public void AddCompetence(Competence comp)
         {
             if (comp == null || this.Competences.Contains(comp))
@@ -67,11 +80,9 @@ namespace ObjectModel
             return this.Competences.Where(c => c.Type == type).ToList();
         }
 
-        public static Realisation GetRealisation(int id)
+        public static Realisation GetInstance(int dbId)
         {
-            var db = new SMPortfolioEntities();
-            var realisation = db.Realisations.Where(r => r.Id == id).First();
-            return realisation;
+            return new Realisation(dbId);
         }
     }
 }
