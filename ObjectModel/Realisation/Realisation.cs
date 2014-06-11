@@ -9,6 +9,7 @@ namespace ObjectModel
 {
     public class Realisation
     {
+        #region properties
         public string Name { get; set; }
         public string Description { get; set; }
 
@@ -38,6 +39,16 @@ namespace ObjectModel
 
         public List<Competence> Competences { get; set; }
 
+        #endregion
+
+        #region constructors  
+
+        /// <summary>
+        /// Initialize a new instance of Realisation
+        /// </summary>
+        /// <param name="name">the name</param>
+        /// <param name="id">the id</param>
+        /// <param name="imageName">the optional imagename</param>
         public Realisation(string name, int id, string imageName = null)
         {
             this.Name = name;
@@ -46,6 +57,12 @@ namespace ObjectModel
             this._imageName = imageName;
         }
 
+        /// <summary>
+        /// Private constructor, only use this to
+        /// Initialize an instance of realisation with a 
+        /// dbobject id.
+        /// </summary>
+        /// <param name="dbId"></param>
         private Realisation(int dbId)
         {
             using (var db = new SMPortfolioEntities())
@@ -59,6 +76,9 @@ namespace ObjectModel
             }
         }
 
+        #endregion
+
+        #region public methods
         public void AddCompetence(Competence comp)
         {
             if (comp == null || this.Competences.Contains(comp))
@@ -80,11 +100,25 @@ namespace ObjectModel
             return this.Competences.Where(c => c.Type == type).ToList();
         }
 
+        #endregion
+
+        #region static
+
+        /// <summary>
+        /// Get an instance of a realisation from database
+        /// </summary>
+        /// <param name="dbId">The object's database id</param>
+        /// <returns>The realisation</returns>
         public static Realisation GetInstance(int dbId)
         {
             return new Realisation(dbId);
         }
 
+         /// <summary>
+         /// Get multiple instances of Realisation
+         /// </summary>
+         /// <param name="dbIds">List of database object ids</param>
+         /// <returns>The list of realisations</returns>
         public static IEnumerable<Realisation> GetInstances (IEnumerable<int> dbIds)
         {
             foreach (int id in dbIds)
@@ -93,6 +127,10 @@ namespace ObjectModel
             }
         }
 
+        /// <summary>
+        /// Get all Realisations from database
+        /// </summary>
+        /// <returns>All the realisations</returns>
         public static IEnumerable<Realisation> GetAllInstances()
         {
             List<int> ids;
@@ -104,5 +142,7 @@ namespace ObjectModel
 
             return GetInstances(ids);
         }
+
+        #endregion
     }
 }
