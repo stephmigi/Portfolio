@@ -16,6 +16,8 @@ namespace ObjectModel
 
         public List<Realisation> Realisations { get; set; }
 
+        public readonly List<Competence> Realisations2;
+
         public Competence(string name, int id)
         {
             this.Name = name;
@@ -34,6 +36,7 @@ namespace ObjectModel
             this.Id = dbObject.Id;
             this.Description = dbObject.Description;
             this.Name = dbObject.Name;
+            this.Realisations2 = dbObject.CompetenceByRealisations.Where(c => c.CompetenceId == this.Id).ToList();
         }
 
         public void AddRealisation(Realisation real)

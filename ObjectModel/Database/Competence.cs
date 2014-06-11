@@ -14,9 +14,16 @@ namespace ObjectModel.Database
     
     public partial class Competence
     {
+        public Competence()
+        {
+            this.CompetenceByRealisations = new HashSet<CompetenceByRealisation>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public Nullable<int> CompetenceType { get; set; }
+    
+        public virtual ICollection<CompetenceByRealisation> CompetenceByRealisations { get; set; }
     }
 }

@@ -14,6 +14,14 @@
           <Property Name="Description" Type="text" />
           <Property Name="CompetenceType" Type="int" />
         </EntityType>
+        <EntityType Name="CompetenceByRealisation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompetenceId" Type="int" Nullable="false" />
+          <Property Name="RealisationId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Realisation">
           <Key>
             <PropertyRef Name="Id" />
@@ -23,9 +31,42 @@
           <Property Name="Description" Type="text" />
           <Property Name="LogoName" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <Association Name="FK__Competenc__Compe__108B795B">
+          <End Role="Competence" Type="Self.Competence" Multiplicity="1" />
+          <End Role="CompetenceByRealisation" Type="Self.CompetenceByRealisation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Competence">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CompetenceByRealisation">
+              <PropertyRef Name="CompetenceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Competenc__Reali__117F9D94">
+          <End Role="Realisation" Type="Self.Realisation" Multiplicity="1" />
+          <End Role="CompetenceByRealisation" Type="Self.CompetenceByRealisation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Realisation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CompetenceByRealisation">
+              <PropertyRef Name="RealisationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="SMPortfolioModelStoreContainer">
           <EntitySet Name="Competence" EntityType="Self.Competence" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompetenceByRealisation" EntityType="Self.CompetenceByRealisation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Realisation" EntityType="Self.Realisation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Competenc__Compe__108B795B" Association="Self.FK__Competenc__Compe__108B795B">
+            <End Role="Competence" EntitySet="Competence" />
+            <End Role="CompetenceByRealisation" EntitySet="CompetenceByRealisation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Competenc__Reali__117F9D94" Association="Self.FK__Competenc__Reali__117F9D94">
+            <End Role="Realisation" EntitySet="Realisation" />
+            <End Role="CompetenceByRealisation" EntitySet="CompetenceByRealisation" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -39,10 +80,20 @@
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="LogoName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CompetenceByRealisations" Relationship="SMPortfolioModel.FK__Competenc__Reali__117F9D94" FromRole="Realisation" ToRole="CompetenceByRealisation" />
         </EntityType>
         <EntityContainer Name="SMPortfolioEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Realisations" EntityType="Self.Realisation" />
           <EntitySet Name="Competences" EntityType="SMPortfolioModel.Competence" />
+          <EntitySet Name="CompetenceByRealisations" EntityType="SMPortfolioModel.CompetenceByRealisation" />
+          <AssociationSet Name="FK__Competenc__Compe__108B795B" Association="SMPortfolioModel.FK__Competenc__Compe__108B795B">
+            <End Role="Competence" EntitySet="Competences" />
+            <End Role="CompetenceByRealisation" EntitySet="CompetenceByRealisations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Competenc__Reali__117F9D94" Association="SMPortfolioModel.FK__Competenc__Reali__117F9D94">
+            <End Role="Realisation" EntitySet="Realisations" />
+            <End Role="CompetenceByRealisation" EntitySet="CompetenceByRealisations" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Competence">
           <Key>
@@ -52,7 +103,42 @@
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="CompetenceType" Type="Int32" />
+          <NavigationProperty Name="CompetenceByRealisations" Relationship="SMPortfolioModel.FK__Competenc__Compe__108B795B" FromRole="Competence" ToRole="CompetenceByRealisation" />
         </EntityType>
+        <EntityType Name="CompetenceByRealisation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompetenceId" Type="Int32" Nullable="false" />
+          <Property Name="RealisationId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Competence" Relationship="SMPortfolioModel.FK__Competenc__Compe__108B795B" FromRole="CompetenceByRealisation" ToRole="Competence" />
+          <NavigationProperty Name="Realisation" Relationship="SMPortfolioModel.FK__Competenc__Reali__117F9D94" FromRole="CompetenceByRealisation" ToRole="Realisation" />
+        </EntityType>
+        <Association Name="FK__Competenc__Compe__108B795B">
+          <End Type="SMPortfolioModel.Competence" Role="Competence" Multiplicity="1" />
+          <End Type="SMPortfolioModel.CompetenceByRealisation" Role="CompetenceByRealisation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Competence">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CompetenceByRealisation">
+              <PropertyRef Name="CompetenceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Competenc__Reali__117F9D94">
+          <End Type="SMPortfolioModel.Realisation" Role="Realisation" Multiplicity="1" />
+          <End Type="SMPortfolioModel.CompetenceByRealisation" Role="CompetenceByRealisation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Realisation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CompetenceByRealisation">
+              <PropertyRef Name="RealisationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -75,6 +161,15 @@
                 <ScalarProperty Name="CompetenceType" ColumnName="CompetenceType" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompetenceByRealisations">
+            <EntityTypeMapping TypeName="SMPortfolioModel.CompetenceByRealisation">
+              <MappingFragment StoreEntitySet="CompetenceByRealisation">
+                <ScalarProperty Name="RealisationId" ColumnName="RealisationId" />
+                <ScalarProperty Name="CompetenceId" ColumnName="CompetenceId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

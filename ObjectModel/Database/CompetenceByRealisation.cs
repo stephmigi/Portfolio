@@ -12,18 +12,13 @@ namespace ObjectModel.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class Realisation
+    public partial class CompetenceByRealisation
     {
-        public Realisation()
-        {
-            this.CompetenceByRealisations = new HashSet<CompetenceByRealisation>();
-        }
-    
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string LogoName { get; set; }
+        public int CompetenceId { get; set; }
+        public int RealisationId { get; set; }
     
-        public virtual ICollection<CompetenceByRealisation> CompetenceByRealisations { get; set; }
+        public virtual Competence Competence { get; set; }
+        public virtual Realisation Realisation { get; set; }
     }
 }

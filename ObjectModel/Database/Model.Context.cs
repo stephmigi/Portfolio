@@ -27,5 +27,6 @@ namespace ObjectModel.Database
     
         public virtual DbSet<Realisation> Realisations { get; set; }
         public virtual DbSet<Competence> Competences { get; set; }
+        public virtual DbSet<CompetenceByRealisation> CompetenceByRealisations { get; set; }
     }
 }
