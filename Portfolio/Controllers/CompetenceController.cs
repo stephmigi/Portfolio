@@ -23,7 +23,7 @@ namespace Portfolio.Controllers
         public ActionResult Detail(int id)
         {
             var currentCompetence = Competence.GetInstance(id);
-            return View("SimpleDetail", currentCompetence);
+            return View("Detail", currentCompetence);
         }
     }
 }

@@ -14,15 +14,20 @@ namespace ObjectModel
         public readonly int Id;
         public CompetenceType Type { get; set; }
 
-        public List<Realisation> Realisations { get; set; }
-
-        public readonly List<Competence> Realisations2;
-
         public Competence(string name, int id)
         {
             this.Name = name;
             this.Id = id;
-            this.Realisations = new List<Realisation>();
+        }
+
+        public List<int> RealisationIds { get; set; }
+
+        public IEnumerable<Realisation> Realisations
+        {
+            get
+            {
+                return Realisation.GetInstances(this.RealisationIds);
+            }
         }
 
         /// <summary>
@@ -36,21 +41,14 @@ namespace ObjectModel
             this.Id = dbObject.Id;
             this.Description = dbObject.Description;
             this.Name = dbObject.Name;
-            this.Realisations2 = dbObject.CompetenceByRealisations.Where(c => c.CompetenceId == this.Id).ToList();
-        }
 
-        public void AddRealisation(Realisation real)
-        {
-            if (real == null || this.Realisations.Contains(real))
-                throw new InvalidOperationException("Realisation must not be null or already be present in competence");
-            this.Realisations.Add(real);
-        }
+            this.Type = (CompetenceType)dbObject.CompetenceType;
 
-        public void AddRealisations(List<Realisation> reals)
-        {
-            foreach (var r in reals)
+            this.RealisationIds = new List<int>();
+
+            foreach (var competence in dbObject.Realisations)
             {
-                this.AddRealisation(r);
+                this.RealisationIds.Add(competence.Id);
             }
         }
 

@@ -32,30 +32,36 @@ namespace ObjectModel
                 return this._imageName ?? "NoLogo.gif";
             }
         }
-        public DateTime DateStart { get; set; }
-        public DateTime DateEnd { get; set; }
 
         public RealisationType Type { get; set; }
 
-        public List<Competence> Competences { get; set; }
+        public List<int> CompetenceIds { get; set; }
+
+        public IEnumerable<Competence> Competences
+        {
+            get
+            {
+                return Competence.GetInstances(this.CompetenceIds);
+            }
+        }
 
         #endregion
 
         #region constructors  
 
-        /// <summary>
-        /// Initialize a new instance of Realisation
-        /// </summary>
-        /// <param name="name">the name</param>
-        /// <param name="id">the id</param>
-        /// <param name="imageName">the optional imagename</param>
-        public Realisation(string name, int id, string imageName = null)
-        {
-            this.Name = name;
-            this.Id = id;
-            this.Competences = new List<Competence>();
-            this._imageName = imageName;
-        }
+        ///// <summary>
+        ///// Initialize a new instance of Realisation
+        ///// </summary>
+        ///// <param name="name">the name</param>
+        ///// <param name="id">the id</param>
+        ///// <param name="imageName">the optional imagename</param>
+        //public Realisation(string name, int id, string imageName = null)
+        //{
+        //    this.Name = name;
+        //    this.Id = id;
+        //    this.Competences = new List<Competence>();
+        //    this._imageName = imageName;
+        //}
 
         /// <summary>
         /// Private constructor, only use this to
@@ -69,34 +75,13 @@ namespace ObjectModel
             this._imageName = dbObject.LogoName;
             this.Description = dbObject.Description;
             this.Name = dbObject.Name;
-        }
 
-        #endregion
+            this.CompetenceIds = new List<int>();
 
-        #region public methods
-        
-        [Obsolete("To be deleted soon.")]
-        public void AddCompetence(Competence comp)
-        {
-            if (comp == null || this.Competences.Contains(comp))
-                throw new InvalidOperationException("Competence must not be null or already be present in competence");
-
-            this.Competences.Add(comp);
-        }
-
-        [Obsolete("To be deleted soon.")]
-        public void AddCompetences(List<Competence> comp)
-        {
-            foreach (var c in comp)
+            foreach (var dbCompetence in dbObject.Competences)
             {
-                this.AddCompetence(c);
+                this.CompetenceIds.Add(dbCompetence.Id);
             }
-        }
-
-        [Obsolete("To be deleted soon.")]
-        public List<Competence> GetCompetencesByType(CompetenceType type)
-        {
-            return this.Competences.Where(c => c.Type == type).ToList();
         }
 
         #endregion

@@ -24,7 +24,7 @@ namespace Portfolio.Controllers
         {
             var currentRealisation = Realisation.GetInstance(id);
 
-            return currentRealisation != null ? View("SimpleDetail", currentRealisation) : View("404");
+            return currentRealisation != null ? View("Detail", currentRealisation) : View("404");
         }
     }
 }
