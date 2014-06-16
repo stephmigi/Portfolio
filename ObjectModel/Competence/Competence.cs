@@ -22,13 +22,13 @@ namespace ObjectModel
 
         public List<int> RealisationIds { get; set; }
 
-        public IEnumerable<Realisation> Realisations
-        {
-            get
-            {
-                return Realisation.GetInstances(this.RealisationIds);
-            }
-        }
+        //public IEnumerable<Realisation> Realisations
+        //{
+        //    get
+        //    {
+        //        return Realisation.GetInstances(this.RealisationIds);
+        //    }
+        //}
 
         /// <summary>
         /// Private constructor, only use this to

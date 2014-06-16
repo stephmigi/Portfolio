@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model ObjectModel.Realisation
+@model ObjectModel.Realisations.Realisation
 <h2>@Model.Name</h2>
 
 <div class ="realisation-description">@Model.Description</div>
@@ -24,10 +24,10 @@
         Compétences Humaines :
         <ul>
                 @foreach (var comp in Model.Competences.Where(c => c.Type == ObjectModel.CompetenceType.HumanProject))
-{
+                {
 
-                <li>@Html.ActionLink(comp.Name, "Detail", "Competence", new { id = comp.Id }, null)</li>
-            }
+                    <li>@Html.ActionLink(comp.Name, "Detail", "Competence", new { id = comp.Id }, null)</li>
+                }
         </ul>
     </div>
 </div>
