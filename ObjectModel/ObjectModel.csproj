@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Competences\ICompetenceRepository.cs" />
+    <Compile Include="Competences\CompetenceRepository.cs" />
     <Compile Include="Database\Competence.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -66,7 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Competence\Competence.cs" />
+    <Compile Include="Competences\Competence.cs" />
     <Compile Include="Database\Realisation.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -78,6 +80,7 @@
     <Compile Include="Realisations\Realisation.cs" />
     <Compile Include="Enums\RealisationType.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="RealisationAndCompetenceService.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Database\Model.edmx">

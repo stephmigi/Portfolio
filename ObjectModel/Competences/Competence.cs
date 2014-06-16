@@ -36,7 +36,7 @@ namespace ObjectModel
         /// dbobject.
         /// </summary>
         /// <param name="dbId"></param>
-        private Competence(Database.Competence dbObject)
+        internal Competence(Database.Competence dbObject)
         {
             this.Id = dbObject.Id;
             this.Description = dbObject.Description;
