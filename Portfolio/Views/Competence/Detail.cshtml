@@ -3,14 +3,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model ObjectModel.Competence
+@model Portfolio.ViewModels.Competences.DisplayViewModel
 
-Ceci est le détail de la compétence @Model.Name .
+Ceci est le détail de la compétence @Model.Name.
 
 <div>
     Réalisations associés :
     <ul>
-        @foreach (var real in Model.Realisations)
+        @foreach (var real in Model.LinkedRealisations)
         { 
             <li>@Html.ActionLink(real.Name, "Detail", "Realisation", new { id = real.Id }, null)</li>
         }

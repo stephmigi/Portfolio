@@ -3,11 +3,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model IEnumerable<ObjectModel.Realisations.Realisation>
+@model Portfolio.ViewModels.Realisations.ListViewModel
 
 Voici les réalisations auxquelles j'ai pu participer au cours de mes années d'études ainsi qu'à travers des expériences personnelles.
 
-    @foreach (var real in Model)
+    @foreach (var real in Model.Realisations)
     {
         <div class="realisation-summary">
             <img src="~/Content/img/logos/@real.ImageName" />

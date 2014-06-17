@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Portfolio.ViewModels.Realisations;
 
 namespace Portfolio.Controllers
 {
@@ -23,13 +24,18 @@ namespace Portfolio.Controllers
         public ActionResult Index()
         {
             var realisationList = _realAndCompService.GetAllRealisations();
-            return View("Index", realisationList);  
+            var model = new ListViewModel(realisationList);
+            return View("Index", model);  
         }
 
         public ActionResult Detail(int id)
         {
             var currentRealisation = _realAndCompService.GetRealisationById(id);
-            return currentRealisation != null ? View("SimpleDetail", currentRealisation) : View("404");
+
+            var model = new DisplayViewModel(currentRealisation);
+            model.LinkedCompetences = _realAndCompService.GetLinkedCompetences(currentRealisation);
+
+            return View("Detail", model);
         }
     }
 }

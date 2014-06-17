@@ -9,16 +9,16 @@ namespace ObjectModel.Realisations
 {
     public class RealisationRepository : IRealisationRepository
     {
-        private readonly SMPortfolioEntities context;
+        private readonly SMPortfolioEntities _context;
 
         public RealisationRepository(SMPortfolioEntities context)
         {
-            this.context = context;
+            this._context = context;
         }
 
         public Realisation GetById(int id)
         {
-            Database.Realisation dbObject = context.Realisations.Where(r => r.Id == id).First();
+            Database.Realisation dbObject = _context.Realisations.Where(r => r.Id == id).First();
             return this.CopyFromDbObject(dbObject);
         }
 
@@ -33,7 +33,7 @@ namespace ObjectModel.Realisations
         public IEnumerable<Realisation> GetAll()
         {
             List<int> ids;
-            ids = context.Realisations.Select(r => r.Id).ToList();
+            ids = _context.Realisations.Select(r => r.Id).ToList();
             return GetByIds(ids);
         }
 
@@ -45,7 +45,7 @@ namespace ObjectModel.Realisations
             {
                 if (disposing)
                 {
-                    context.Dispose();
+                    _context.Dispose();
                 }
             }
             this.disposed = true;
