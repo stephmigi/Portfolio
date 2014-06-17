@@ -81,6 +81,7 @@
     <Compile Include="Enums\RealisationType.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="RealisationAndCompetenceService.cs" />
+    <Compile Include="StandardRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Database\Model.edmx">
