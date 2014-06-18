@@ -33,6 +33,9 @@ namespace Portfolio.Controllers
         {
             var competence = _realAndCompService.GetCompetenceById(id);
 
+            if (competence == null)
+                return View("404");
+
             var model = new DisplayViewModel(competence);
             model.LinkedRealisations = _realAndCompService.GetLinkedRealisations(competence.Id);
 

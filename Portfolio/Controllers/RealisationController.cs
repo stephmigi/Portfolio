@@ -31,10 +31,13 @@ namespace Portfolio.Controllers
 
         public ActionResult Detail(int id)
         {
-            var currentRealisation = _realAndCompService.GetRealisationById(id);
+            var realisation = _realAndCompService.GetRealisationById(id);
 
-            var model = new DisplayViewModel(currentRealisation);
-            model.LinkedCompetences = _realAndCompService.GetLinkedCompetences(currentRealisation.Id);
+            if (realisation == null)
+                return View("404");
+
+            var model = new DisplayViewModel(realisation);
+            model.LinkedCompetences = _realAndCompService.GetLinkedCompetences(realisation.Id);
 
             return View("Detail", model);
         }

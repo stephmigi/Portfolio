@@ -38,6 +38,8 @@ namespace ObjectModel.Repositories
         public T GetById(int id)
         {
             TEntity dbObject = _context.Set<TEntity>().Find(id);
+            if (dbObject == null)
+                return null;
             return this.CopyFromDbObject(dbObject);
         }
 
