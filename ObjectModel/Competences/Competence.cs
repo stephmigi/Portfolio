@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObjectModel
+namespace ObjectModel.Competences
 {
     public class Competence
     {
@@ -13,6 +13,8 @@ namespace ObjectModel
         public string Description { get; set; }
         public readonly int Id;
         public CompetenceType Type { get; set; }
+
+        public Competence() { }
 
         public Competence(string name, int id)
         {
@@ -28,7 +30,7 @@ namespace ObjectModel
         /// dbobject.
         /// </summary>
         /// <param name="dbId"></param>
-        internal Competence(Database.Competence dbObject)
+        public Competence(Database.Competence dbObject)
         {
             this.Id = dbObject.Id;
             this.Description = dbObject.Description;

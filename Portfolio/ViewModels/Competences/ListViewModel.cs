@@ -1,5 +1,4 @@
-﻿using ObjectModel;
-using ObjectModel.Realisations;
+﻿using ObjectModel.Competences;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +12,7 @@ namespace Portfolio.ViewModels.Competences
 
         public ListViewModel(IEnumerable<Competence> instance)
         {
-            Competences = instance;
+            this.Competences = instance;
         }
     }
 }

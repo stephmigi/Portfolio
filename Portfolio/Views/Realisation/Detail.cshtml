@@ -14,7 +14,7 @@
         <div class="competenceblock">
             Compétences techniques :
             <ul>
-                @foreach (var comp in Model.LinkedCompetences.Where(c => c.Type == ObjectModel.CompetenceType.TechnicalProject))
+                @foreach (var comp in Model.LinkedCompetences.Where(c => c.Type == ObjectModel.Competences.CompetenceType.TechnicalProject))
                 {
                     <li>@Html.ActionLink(comp.Name, "Detail", "Competence", new { id = comp.Id }, null)</li>
                 }
@@ -23,7 +23,7 @@
     <div class="competenceblock">
         Compétences Humaines :
         <ul>
-                @foreach (var comp in Model.LinkedCompetences.Where(c => c.Type == ObjectModel.CompetenceType.HumanProject))
+                @foreach (var comp in Model.LinkedCompetences.Where(c => c.Type == ObjectModel.Competences.CompetenceType.HumanProject))
                 {
 
                     <li>@Html.ActionLink(comp.Name, "Detail", "Competence", new { id = comp.Id }, null)</li>

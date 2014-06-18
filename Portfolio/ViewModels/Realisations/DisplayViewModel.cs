@@ -1,4 +1,4 @@
-﻿using ObjectModel;
+﻿using ObjectModel.Competences;
 using ObjectModel.Realisations;
 using System;
 using System.Collections.Generic;

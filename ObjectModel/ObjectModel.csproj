@@ -48,8 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Competences\ICompetenceRepository.cs" />
-    <Compile Include="Competences\CompetenceRepository.cs" />
     <Compile Include="Database\Competence.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -72,16 +70,14 @@
     <Compile Include="Database\Realisation.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Enums\CompetenceType.cs" />
-    <Compile Include="FakeProfileSimulator.cs" />
-    <Compile Include="Realisations\IRealisationRepository.cs" />
+    <Compile Include="Competences\CompetenceType.cs" />
+    <Compile Include="IEntityRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Realisations\RealisationRepository.cs" />
     <Compile Include="Realisations\Realisation.cs" />
-    <Compile Include="Enums\RealisationType.cs" />
+    <Compile Include="Realisations\RealisationType.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="RealisationAndCompetenceService.cs" />
-    <Compile Include="StandardRepository.cs" />
+    <Compile Include="SMEntityRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Database\Model.edmx">

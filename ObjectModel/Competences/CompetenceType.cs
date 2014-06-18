@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObjectModel
+namespace ObjectModel.Competences
 {
     public enum CompetenceType
     {

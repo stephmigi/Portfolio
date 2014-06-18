@@ -18,7 +18,7 @@ namespace Portfolio.Controllers
         public RealisationController()
         {
             @ViewBag.Active = "Realisation";
-            this._realAndCompService = new RealisationAndCompetenceService(new RealisationRepository(new SMPortfolioEntities()), new CompetenceRepository(new SMPortfolioEntities()));
+            this._realAndCompService = new RealisationAndCompetenceService(new SMEntityRepository<ObjectModel.Database.Realisation, ObjectModel.Realisations.Realisation>(new SMPortfolioEntities()), new SMEntityRepository<ObjectModel.Database.Competence, ObjectModel.Competences.Competence>(new SMPortfolioEntities()));
         }
 
         public ActionResult Index()
@@ -33,7 +33,7 @@ namespace Portfolio.Controllers
             var currentRealisation = _realAndCompService.GetRealisationById(id);
 
             var model = new DisplayViewModel(currentRealisation);
-            model.LinkedCompetences = _realAndCompService.GetLinkedCompetences(currentRealisation);
+            model.LinkedCompetences = _realAndCompService.GetLinkedCompetences(currentRealisation.Id);
 
             return View("Detail", model);
         }

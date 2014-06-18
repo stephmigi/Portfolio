@@ -41,13 +41,15 @@ namespace ObjectModel.Realisations
 
         #region constructors  
 
+        public Realisation() { }
+
         /// <summary>
         /// Private constructor, only use this to
         /// Initialize an instance of realisation with a 
         /// dbobject.
         /// </summary>
         /// <param name="dbId"></param>
-        internal Realisation(Database.Realisation dbObject)
+        public Realisation(Database.Realisation dbObject)
         {
             this.Id = dbObject.Id;
             this._imageName = dbObject.LogoName;
