@@ -26,7 +26,7 @@ namespace Portfolio.ViewModels.Competences
             this.Name = instance.Name;
             this.Description = instance.Description;
 
-            LinkedRealisations = new List<Realisation>();
+            this.LinkedRealisations = new List<Realisation>();
         }
     }
 }

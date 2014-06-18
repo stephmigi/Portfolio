@@ -26,10 +26,19 @@ namespace ObjectModel.Services
             _competenceRepository = compRepo;
         }
 
+        #region Realisations
         public IEnumerable<Realisation> GetAllRealisations()
         {
             return _realisationRepository.GetAll();
         }
+
+        public Realisation GetRealisationById(int id)
+        {
+            return _realisationRepository.GetById(id);
+        }
+        #endregion
+
+        #region Competences
 
         public IEnumerable<Competence> GetAllCompetences()
         {
@@ -41,10 +50,9 @@ namespace ObjectModel.Services
             return _competenceRepository.GetById(id);
         }
 
-        public Realisation GetRealisationById(int id)
-        {
-            return _realisationRepository.GetById(id);
-        }
+        #endregion
+
+        #region Competences by realisation
 
         /// <summary>
         /// Returns the competences linked to a realisation
@@ -73,5 +81,7 @@ namespace ObjectModel.Services
                 yield return GetRealisationById(linked);
             }
         }
+
+        #endregion
     }
 }

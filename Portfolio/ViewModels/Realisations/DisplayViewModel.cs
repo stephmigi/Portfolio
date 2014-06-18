@@ -29,7 +29,7 @@ namespace Portfolio.ViewModels.Realisations
             this.Description = instance.Description;
             this.ImageName = instance.ImageName;
 
-            LinkedCompetences = new List<Competence>();
+            this.LinkedCompetences = new List<Competence>();
         }
     }
 }

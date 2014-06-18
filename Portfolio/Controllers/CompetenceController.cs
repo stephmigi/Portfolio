@@ -25,18 +25,16 @@ namespace Portfolio.Controllers
         public ActionResult Index()
         {
             var competenceList = _realAndCompService.GetAllCompetences();
-
             var model = new ListViewModel(competenceList);
-
             return View("Index", model);    
         }
 
         public ActionResult Detail(int id)
         {
-            var currentCompetence = _realAndCompService.GetCompetenceById(id);
+            var competence = _realAndCompService.GetCompetenceById(id);
 
-            var model = new DisplayViewModel(currentCompetence);
-            model.LinkedRealisations = _realAndCompService.GetLinkedRealisations(currentCompetence.Id);
+            var model = new DisplayViewModel(competence);
+            model.LinkedRealisations = _realAndCompService.GetLinkedRealisations(competence.Id);
 
             return View("Detail", model);
         }

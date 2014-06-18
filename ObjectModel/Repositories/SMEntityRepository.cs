@@ -28,6 +28,8 @@ namespace ObjectModel.Repositories
             this._context = context;
         }
 
+        #region public
+
         /// <summary>
         /// Returns an instance of T by id
         /// </summary>
@@ -52,7 +54,50 @@ namespace ObjectModel.Repositories
             }
         }
 
-        #region IDisposable 
+        #endregion
+
+        #region private
+
+        /// <summary>
+        /// Initializes a new instance of T based on the 
+        /// linked TEntity instance.
+        /// </summary>
+        /// <param name="dbObject">TEntity object</param>
+        /// <returns>T instance</returns>
+        private T CopyFromDbObject(TEntity dbObject)
+        {
+            if (this.HasValidTEntityToTCtor(typeof(T), typeof(TEntity)) == false)
+                throw new InvalidOperationException("Type T has to have a constructor of signature : public T(Tentity entity)");
+
+            var newInstance = Activator.CreateInstance(typeof(T), new object[] { dbObject as TEntity }) as T;
+            return newInstance;
+        }
+
+        /// <summary>
+        /// Checks if type T has a constructor of signature : public T(TEntity entity)
+        /// </summary>
+        /// <param name="typeOfT">Type of T</param>
+        /// <param name="typeOfTEntity">Type of TEntity</param>
+        /// <returns>True if valid ctor is found</returns>
+        private bool HasValidTEntityToTCtor(Type typeOfT, Type typeOfTEntity)
+        {
+            bool hasValid = false;
+
+            var constructors = typeOfT.GetConstructors();
+            foreach (var ctor in constructors)
+            {
+                foreach (var param in ctor.GetParameters())
+                {
+                    if (param.ParameterType == typeOfTEntity && ctor.GetParameters().Count() == 1)
+                        hasValid = true;
+                }
+            }
+            return hasValid;
+        }
+
+        #endregion
+
+        #region IDisposable
         private bool disposed = false;
 
         protected virtual void Dispose(bool disposing)
@@ -74,34 +119,5 @@ namespace ObjectModel.Repositories
         }
 
         #endregion
-
-        /// <summary>
-        /// Initializes a new instance of T based on the 
-        /// linked TEntity instance.
-        /// This means that every T type should have a constructor such as :
-        /// T(TEntity entity)
-        /// </summary>
-        /// <param name="dbObject">TEntity object</param>
-        /// <returns>T instance</returns>
-        private T CopyFromDbObject(TEntity dbObject)
-        {
-            Type theType = typeof(T);
-            var constructors = theType.GetConstructors();
-
-            bool found = false;
-            foreach (var ctor in constructors)
-            {
-                foreach (var param in ctor.GetParameters())
-                {
-                    if (param.ParameterType == typeof(TEntity) && ctor.GetParameters().Count() == 1)
-                        found = true;
-                }
-            }
-            if (found == false)
-                throw new InvalidOperationException("Type T has to have a constructor of signature public T(Tentity entity)");
-
-            var newInstance = Activator.CreateInstance(typeof(T), new object[] { dbObject as TEntity }) as T;
-            return newInstance;
-        }
     }
 }
