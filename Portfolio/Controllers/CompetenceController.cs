@@ -1,13 +1,14 @@
-﻿using ObjectModel;
-using ObjectModel.Competences;
-using ObjectModel.Database;
-using ObjectModel.Realisations;
-using Portfolio.ViewModels.Competences;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
+using ObjectModel.Database;
+using ObjectModel.Repositories;
+using ObjectModel.Services;
+
+using Portfolio.ViewModels.Competences;
 
 namespace Portfolio.Controllers
 {

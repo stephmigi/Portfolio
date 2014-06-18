@@ -1,13 +1,17 @@
-﻿using ObjectModel.Competences;
-using ObjectModel.Realisations;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using ObjectModel.Competences;
+using ObjectModel.Realisations;
+
 namespace Portfolio.ViewModels.Realisations
 {
+    /// <summary>
+    /// ViewModel used to display one realisation in detail.
+    /// </summary>
     public class DisplayViewModel
     {
         public int RealisationId { get; set; }

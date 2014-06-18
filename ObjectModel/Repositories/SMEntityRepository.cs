@@ -1,12 +1,13 @@
-﻿using ObjectModel.Database;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObjectModel
+using ObjectModel.Database;
+
+namespace ObjectModel.Repositories
 {
     /// <summary>
     /// Implementation of IEntityRepository for SMPortfolioEntities

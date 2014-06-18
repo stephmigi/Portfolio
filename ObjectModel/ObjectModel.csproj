@@ -71,13 +71,13 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Competences\CompetenceType.cs" />
-    <Compile Include="IEntityRepository.cs" />
+    <Compile Include="Repositories\IEntityRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Realisations\Realisation.cs" />
     <Compile Include="Realisations\RealisationType.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="RealisationAndCompetenceService.cs" />
-    <Compile Include="SMEntityRepository.cs" />
+    <Compile Include="Services\RealisationAndCompetenceService.cs" />
+    <Compile Include="Repositories\SMEntityRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Database\Model.edmx">

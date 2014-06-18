@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ObjectModel.Competences
 {
+    /// <summary>
+    /// Defines the types of competences.
+    /// </summary>
     public enum CompetenceType
     {
         TechnicalProject = 1,

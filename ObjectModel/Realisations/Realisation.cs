@@ -1,9 +1,11 @@
-﻿using ObjectModel.Database;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using ObjectModel.Extensions;
+using ObjectModel.Database;
 
 namespace ObjectModel.Realisations
 {
@@ -17,7 +19,7 @@ namespace ObjectModel.Realisations
         {
             get
             {
-                return Description.EllipseString(25);
+                return Description.EllipseString(200);
             }
         }
 

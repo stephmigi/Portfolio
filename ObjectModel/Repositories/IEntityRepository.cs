@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObjectModel
+namespace ObjectModel.Repositories
 {
     /// <summary>
     /// Generic interface representing an EF Repository.

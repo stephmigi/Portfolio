@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ObjectModel.Realisations;
-using ObjectModel.Competences;
 
-namespace ObjectModel
+using ObjectModel.Competences;
+using ObjectModel.Realisations;
+using ObjectModel.Repositories;
+
+namespace ObjectModel.Services
 {
     /// <summary>
     /// Service class containing a realisation and a competence repo.
