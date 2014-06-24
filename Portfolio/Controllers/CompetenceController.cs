@@ -12,7 +12,7 @@ using Portfolio.ViewModels.Competences;
 
 namespace Portfolio.Controllers
 {
-    public class CompetenceController : Controller
+    public class CompetenceController : BaseController
     {
         private RealisationAndCompetenceService _realAndCompService;
 

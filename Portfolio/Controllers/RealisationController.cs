@@ -12,7 +12,7 @@ using Portfolio.ViewModels.Realisations;
 
 namespace Portfolio.Controllers
 {
-    public class RealisationController : Controller
+    public class RealisationController : BaseController
     {
         private RealisationAndCompetenceService _realAndCompService;
 

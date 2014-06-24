@@ -18,8 +18,8 @@ namespace ObjectModel.Repositories
     /// <typeparam name="TEntity">EF generated class</typeparam>
     /// <typeparam name="T">Corresponding business model class</typeparam>
     public class SMEntityRepository<TEntity, T> :  IEntityRepository<TEntity, T>
-        where T : class, new()
-        where TEntity : class, new()
+        where T : class
+        where TEntity : class
     {
         private readonly DbContext _context;
 

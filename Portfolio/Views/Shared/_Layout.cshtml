@@ -36,6 +36,10 @@
     <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
         <div class="container">
             Copyright Stéphane Miginiac - 2014
+            <div class="image-bar">
+                <a href="@Url.Action("ChangeLanguage", "Home", new { id = "fr-FR" })"><img src="~/Content/img/flags/france.png" /></a>
+                <a href="@Url.Action("ChangeLanguage", "Home", new { id = "en-GB" })"><img src="~/Content/img/flags/english.png" /></a>
+            </div>
         </div>
     </nav>
 </body>

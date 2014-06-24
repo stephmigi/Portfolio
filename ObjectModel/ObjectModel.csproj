@@ -76,6 +76,7 @@
     <Compile Include="Realisations\Realisation.cs" />
     <Compile Include="Realisations\RealisationType.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="ResourceHelpers.cs" />
     <Compile Include="Services\RealisationAndCompetenceService.cs" />
     <Compile Include="Repositories\SMEntityRepository.cs" />
   </ItemGroup>
@@ -104,6 +105,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{3bcde2b0-f5cd-45ad-8ff7-5e524b1f5d01}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

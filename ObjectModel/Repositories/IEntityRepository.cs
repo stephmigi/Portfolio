@@ -27,7 +27,7 @@ namespace ObjectModel.Repositories
         /// <summary>
         /// Get all elements of type T
         /// </summary>
-        /// <returns></returns>
+        /// <returns>All elements of type T</returns>
         IEnumerable<T> GetAll();
     }
 }

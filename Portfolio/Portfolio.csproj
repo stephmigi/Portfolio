@@ -111,6 +111,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CompetenceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RealisationController.cs" />
@@ -170,6 +171,10 @@
     <ProjectReference Include="..\ObjectModel\ObjectModel.csproj">
       <Project>{a3bcbcc7-b7f9-44b4-94ba-c55d7ba84c42}</Project>
       <Name>ObjectModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{3bcde2b0-f5cd-45ad-8ff7-5e524b1f5d01}</Project>
+      <Name>Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
