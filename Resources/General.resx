@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="GREETING_MESSAGE" xml:space="preserve">
+  <data name="NAVBAR_MENUITEM_COMP" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="NAVBAR_MENUITEM_CONTACT" xml:space="preserve">
+    <value>Contact me</value>
+  </data>
+  <data name="NAVBAR_MENUITEM_HOME" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="NAVBAR_MENUITEM_REAL" xml:space="preserve">
+    <value>Achievements</value>
+  </data>
+  <data name="HOME_CONTACT_CONTACTME" xml:space="preserve">
+    <value> You have a question ? You wish to contact me ? Feel free !</value>
+  </data>
+  <data name="HOME_GREETING_MESSAGE" xml:space="preserve">
     <value>Welcome on my portfolio ! Enjoy your visit !</value>
+  </data>
+  <data name="SEE_MORE" xml:space="preserve">
+    <value>See more</value>
   </data>
 </root>

@@ -10,10 +10,16 @@ namespace Portfolio.Controllers
 {
     public class BaseController : Controller
     {
+        public readonly string ActiveController;
+
+        public BaseController()
+        {
+            ActiveController = System.Web.HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+        }
+
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
             base.Initialize(requestContext);
-
             this.SetThreadCulture();
         }
 

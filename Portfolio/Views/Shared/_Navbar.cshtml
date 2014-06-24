@@ -1,0 +1,14 @@
+﻿@model Portfolio.ViewModels.Layout.NavBarViewModel
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">@Html.ActionLink(ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Home]), "Index", "Home")</li>
+                <li>@Html.ActionLink(ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Competences]), "Index", "Competence")</li>
+                <li>@Html.ActionLink(ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Realisations]), "Index", "Realisation")</li>
+                <li>@Html.ActionLink(ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Contact]), "Contact", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>

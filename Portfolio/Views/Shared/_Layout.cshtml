@@ -9,37 +9,21 @@
     <link rel="SHORTCUT ICON" href="~/Content/img/favicon.ico">
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class ="navbar-header">
-                <button type ="button" class ="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class ="sr-only">Toggle Navigation</span>
-                    <span class ="icon-bar"></span>
-                    <span class ="icon-bar"></span>
-                    <span class ="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Portfolio</a>
-            </div>
-            <div class ="navbar-collapse collapse">
-                <ul class ="nav navbar-nav">
-                    <li class ="active">@Html.ActionLink("Accueil", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Compétences", "Index", "Competence")</li>
-                    <li>@Html.ActionLink("Réalisations", "Index", "Realisation")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <!-- Header -->
+    @Html.Action("NavigationBar", "Home")
+
+    <!-- Body -->
     <div class ="content">
         @RenderBody()
     </div>
 
+    <!-- Footer -->
     <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
         <div class="container">
             Copyright Stéphane Miginiac - 2014
             <div class="image-bar">
-                <a href="@Url.Action("ChangeLanguage", "Home", new { id = "fr-FR" })"><img src="~/Content/img/flags/france.png" /></a>
-                <a href="@Url.Action("ChangeLanguage", "Home", new { id = "en-GB" })"><img src="~/Content/img/flags/english.png" /></a>
+                <a href="@Url.Action("ChangeLanguage", "Home", new { id = "fr-FR" })"><img src="~/Content/img/flags/france.png" title="Voir ce site en français" /></a>
+                <a href="@Url.Action("ChangeLanguage", "Home", new { id = "en-GB" })"><img src="~/Content/img/flags/english.png" title="See this website in english" /></a>
             </div>
         </div>
     </nav>

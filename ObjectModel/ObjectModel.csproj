@@ -71,6 +71,8 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Competences\CompetenceType.cs" />
+    <Compile Include="EnumHelpers.cs" />
+    <Compile Include="NavigationBarItem.cs" />
     <Compile Include="Repositories\IEntityRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Realisations\Realisation.cs" />

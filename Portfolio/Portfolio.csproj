@@ -114,6 +114,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CompetenceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="ViewModels\Layout\NavBarViewModel.cs" />
     <Compile Include="Controllers\RealisationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -179,6 +180,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\404.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Navbar.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

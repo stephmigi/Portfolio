@@ -61,11 +61,65 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  You have a question ? You wish to contact me ? Feel free !.
+        /// </summary>
+        internal static string HOME_CONTACT_CONTACTME {
+            get {
+                return ResourceManager.GetString("HOME_CONTACT_CONTACTME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome on my portfolio ! Enjoy your visit !.
         /// </summary>
-        internal static string GREETING_MESSAGE {
+        internal static string HOME_GREETING_MESSAGE {
             get {
-                return ResourceManager.GetString("GREETING_MESSAGE", resourceCulture);
+                return ResourceManager.GetString("HOME_GREETING_MESSAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skills.
+        /// </summary>
+        internal static string NAVBAR_MENUITEM_COMP {
+            get {
+                return ResourceManager.GetString("NAVBAR_MENUITEM_COMP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact me.
+        /// </summary>
+        internal static string NAVBAR_MENUITEM_CONTACT {
+            get {
+                return ResourceManager.GetString("NAVBAR_MENUITEM_CONTACT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        internal static string NAVBAR_MENUITEM_HOME {
+            get {
+                return ResourceManager.GetString("NAVBAR_MENUITEM_HOME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Achievements.
+        /// </summary>
+        internal static string NAVBAR_MENUITEM_REAL {
+            get {
+                return ResourceManager.GetString("NAVBAR_MENUITEM_REAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See more.
+        /// </summary>
+        internal static string SEE_MORE {
+            get {
+                return ResourceManager.GetString("SEE_MORE", resourceCulture);
             }
         }
     }

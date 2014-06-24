@@ -13,7 +13,7 @@ Voici les réalisations auxquelles j'ai pu participer au cours de mes années d'
             <img src="~/Content/img/logos/@real.ImageName" />
             <div>
                 @real.ShortDescription
-                @Html.ActionLink("En savoir plus", "Detail", new { id = real.Id })
+                @Html.ActionLink(ResourceHelpers.GetString("General", "SEE_MORE"), "Detail", new { id = real.Id })
             </div>
         </div>
     }

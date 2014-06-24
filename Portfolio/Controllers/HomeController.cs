@@ -1,4 +1,5 @@
 ﻿using ObjectModel;
+using Portfolio.ViewModels.Layout;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -26,12 +27,17 @@ namespace Portfolio.Controllers
             return View("Contact");
         }
 
-        [HttpGet]
-        public ActionResult ChangeLanguage(string id)
+        public void ChangeLanguage(string id)
         {
             CreateCookie("Language", id);
+            Response.Redirect(Request.UrlReferrer.ToString());
+        }
 
-            return RedirectToAction("Index");
+        public ActionResult NavigationBar()
+        {
+            var model = new NavBarViewModel(NavBarManager.GetAllNavBarItemsWithResourceTexts());
+
+            return View("_Navbar", model);
         }
     }
 }

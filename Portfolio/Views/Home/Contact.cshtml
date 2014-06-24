@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-Vous avez une question ? Vous souhaitez me contacter ? N'hésitez pas !
+@ResourceHelpers.GetString("General", "HOME_CONTACT_CONTACTME")
 @using (Html.BeginForm("Contact", "Home"))
 {
     <div>
@@ -16,5 +16,5 @@ Vous avez une question ? Vous souhaitez me contacter ? N'hésitez pas !
         <br />
         @Html.TextArea("message")
     </div>
-    <input type ="submit" "Envoyer" />
+    <input type="submit" name="Envoyer" />
 }
