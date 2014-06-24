@@ -18,7 +18,7 @@ namespace ObjectModel
 
         public static Dictionary<NavigationBarItem, string> GetAllNavBarItemsWithResourceTexts()
         {
-            return EnumHelpers.GetAllElementsWithResourceKey<NavigationBarItem>("General");
+            return EnumHelpers.GetAllElementsWithResourceKey<NavigationBarItem>();
         }
     }
 

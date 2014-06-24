@@ -25,12 +25,12 @@ namespace ObjectModel
         /// </summary>
         /// <typeparam name="T">Type of enum</typeparam>
         /// <returns>Dictionary of enum values and ressourcized texts.</returns>
-        public static Dictionary<T, string> GetAllElementsWithResourceKey<T>(string ressourceSet)
+        public static Dictionary<T, string> GetAllElementsWithResourceKey<T>()
         {
             var dic = new Dictionary<T, string>();
             foreach (var value in GetValues<T>())
             {
-                string text = GetResourceKey(value, ressourceSet);
+                string text = GetResourceKey(value);
                 dic.Add(value, text);              
             }
             return dic;
@@ -43,7 +43,7 @@ namespace ObjectModel
         /// <typeparam name="T">Type of enum</typeparam>
         /// <param name="element">The enum value</param>
         /// <returns>Resourced text, but if this attribute is not present, the enum's value is returned.</returns>
-        private static string GetResourceKey<T>(T element, string ressourceSet)
+        private static string GetResourceKey<T>(T element)
         {
             FieldInfo fi = element.GetType().GetField(element.ToString());
             DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute));

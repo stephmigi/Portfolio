@@ -18,15 +18,21 @@ namespace ObjectModel
             var assembly = Assembly.Load("Resources");
             var manager = new System.Resources.ResourceManager(typeName, assembly);
 
+            string ressourceText;
+
             try
             {
-                return manager.GetString(key, Thread.CurrentThread.CurrentUICulture);
+                ressourceText = manager.GetString(key, Thread.CurrentThread.CurrentUICulture);
+            }
+            catch (Exception)
+            {
+                throw;
             }
 
-            catch (MissingManifestResourceException)
-            {
-                return null;
-            }
+            if (ressourceText == null)
+                throw new InvalidOperationException("Resource key does not exist in \'" + set + "\' resource set.");
+
+            return ressourceText;
         }
     }
 }
