@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using ObjectModel.Database;
+using AutoMapper;
 
 namespace ObjectModel.Repositories
 {
@@ -73,6 +74,13 @@ namespace ObjectModel.Repositories
 
             var newInstance = Activator.CreateInstance(typeof(T), new object[] { dbObject as TEntity }) as T;
             return newInstance;
+        }
+
+        private T CopyFromDbObject2(TEntity dbObject)
+        {
+            Mapper.CreateMap<TEntity, T>();
+            return Mapper.Map<T>(dbObject);
+
         }
 
         /// <summary>
