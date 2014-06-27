@@ -1,4 +1,5 @@
 ﻿using ObjectModel;
+using ObjectModel.Helpers;
 using Portfolio.ViewModels.Layout;
 using System;
 using System.Collections.Generic;
@@ -25,19 +26,6 @@ namespace Portfolio.Controllers
         public ActionResult Contact()
         {
             return View("Contact");
-        }
-
-        public void ChangeLanguage(string id)
-        {
-            CreateCookie("Language", id);
-            Response.Redirect(Request.UrlReferrer.ToString());
-        }
-
-        public ActionResult NavigationBar()
-        {
-            var model = new NavBarViewModel(NavBarManager.GetAllNavBarItemsWithResourceTexts());
-
-            return View("_Navbar", model);
         }
     }
 }

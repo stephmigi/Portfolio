@@ -9,19 +9,6 @@ using System.Threading.Tasks;
 
 namespace ObjectModel
 {
-    public static class NavBarManager
-    {
-        public static IEnumerable<NavigationBarItem> GetAllNavBarItems()
-        {
-            return EnumHelpers.GetValues<NavigationBarItem>();
-        }
-
-        public static Dictionary<NavigationBarItem, string> GetAllNavBarItemsWithResourceTexts()
-        {
-            return EnumHelpers.GetAllElementsWithResourceKey<NavigationBarItem>();
-        }
-    }
-
     public enum NavigationBarItem
     {
         [Description("NAVBAR_MENUITEM_HOME")]

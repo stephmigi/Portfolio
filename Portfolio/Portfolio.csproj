@@ -114,6 +114,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CompetenceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="ViewModels\Layout\NavBarViewModel.cs" />
     <Compile Include="Controllers\RealisationController.cs" />
     <Compile Include="Global.asax.cs">

@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Header -->
-    @Html.Action("NavigationBar", "Home")
+    @Html.Action("NavigationBar", "Layout")
 
     <!-- Body -->
     <div class ="content">
@@ -22,8 +22,8 @@
         <div class="container">
             Copyright Stéphane Miginiac - 2014
             <div class="image-bar">
-                <a href="@Url.Action("ChangeLanguage", "Home", new { id = "fr-FR" })"><img src="~/Content/img/flags/france.png" title="Voir ce site en français" /></a>
-                <a href="@Url.Action("ChangeLanguage", "Home", new { id = "en-GB" })"><img src="~/Content/img/flags/english.png" title="See this website in english" /></a>
+                <a href="@Url.Action("ChangeLanguage", "Layout", new { id = "fr-FR" })"><img src="~/Content/img/flags/france.png" title="Voir ce site en français" /></a>
+                <a href="@Url.Action("ChangeLanguage", "Layout", new { id = "en-GB" })"><img src="~/Content/img/flags/english.png" title="See this website in english" /></a>
             </div>
         </div>
     </nav>

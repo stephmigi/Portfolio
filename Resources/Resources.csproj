@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="General.en.resx" />
-    <EmbeddedResource Include="General.fr.resx" />
+    <EmbeddedResource Include="General.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="General.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>General.Designer.cs</LastGenOutput>

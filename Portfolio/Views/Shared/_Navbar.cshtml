@@ -4,10 +4,10 @@
     <div class="container">
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active">@Html.ActionLink(ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Home]), "Index", "Home")</li>
-                <li>@Html.ActionLink(ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Competences]), "Index", "Competence")</li>
-                <li>@Html.ActionLink(ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Realisations]), "Index", "Realisation")</li>
-                <li>@Html.ActionLink(ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Contact]), "Contact", "Home")</li>
+                <li class="active">@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Home]), "Index", "Home")</li>
+                <li>@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Competences]), "Index", "Competence")</li>
+                <li>@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Realisations]), "Index", "Realisation")</li>
+                <li>@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Contact]), "Contact", "Home")</li>
             </ul>
         </div>
     </div>
