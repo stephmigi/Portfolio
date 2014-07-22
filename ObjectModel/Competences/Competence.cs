@@ -8,6 +8,8 @@ using ObjectModel.Database;
 
 namespace ObjectModel.Competences
 {
+    using ObjectModel.Extensions;
+
     public class Competence
     {
         public string Name { get; set; }
@@ -15,12 +17,32 @@ namespace ObjectModel.Competences
         public readonly int Id;
         public CompetenceType Type { get; set; }
 
+        private string _imageName { get; set; }
+
+        public string ShortDescription
+        {
+            get
+            {
+                return Description.EllipseString(200);
+
+            }
+        }
+
+        public string ImageName
+        {
+            get
+            {
+                return this._imageName;
+            }
+        }
+
         public Competence() { }
 
         public Competence(string name, int id)
         {
             this.Name = name;
             this.Id = id;
+            _imageName = "NoLogo.gif";
         }
 
         public List<int> RealisationIds { get; set; }
@@ -36,6 +58,7 @@ namespace ObjectModel.Competences
             this.Id = dbObject.Id;
             this.Description = dbObject.Description;
             this.Name = dbObject.Name;
+            this._imageName = "NoLogo.gif";
 
             this.Type = (CompetenceType)dbObject.CompetenceType;
 

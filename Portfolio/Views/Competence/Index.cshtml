@@ -8,10 +8,14 @@
 Voici les compétences que j'ai pu acquérir au cours de mes années d'études ainsi qu'à travers des expériences personnelles.
 
 <div>
-    <ul>
-        @foreach (var comp in Model.Competences)
-        { 
-            <li>@Html.ActionLink(comp.Name, "Detail", new { id = comp.Id })</li>
-        }
-    </ul>
+    @foreach (var comp in Model.Competences)
+    {
+        <div class="realisation-summary">
+            <img src="~/Content/img/logos/@comp.ImageName" />
+            <div>
+                @comp.ShortDescription
+                @Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", "SEE_MORE"), "Detail", new { id = comp.Id })
+            </div>
+        </div>
+    }
 </div>

@@ -5,14 +5,19 @@
 
 @model Portfolio.ViewModels.Competences.DisplayViewModel
 
-Ceci est le détail de la compétence @Model.Name.
+<h2>@Model.Name</h2>
 
-<div>
-    Réalisations associés :
-    <ul>
-        @foreach (var real in Model.LinkedRealisations)
-        { 
-            <li>@Html.ActionLink(real.Name, "Detail", "Realisation", new { id = real.Id }, null)</li>
-        }
-    </ul>
+<div class ="realisation-description">@Model.Description</div>
+<img src="~/Content/img/logos/@Model.ImageName" class="realisation-logo" />
+
+<div class="realisation-detail">
+    <div class="competenceblock">
+        <span>Réalisations associés :</span>
+        <ul>
+            @foreach (var real in Model.LinkedRealisations)
+            { 
+                <li>@Html.ActionLink(real.Name, "Detail", "Realisation", new { id = real.Id }, null)</li>
+            }
+        </ul>
+    </div>
 </div>

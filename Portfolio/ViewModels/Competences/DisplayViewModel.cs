@@ -16,6 +16,7 @@ namespace Portfolio.ViewModels.Competences
         public int CompetenceId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string ImageName { get; set; }
         public IEnumerable<Realisation> LinkedRealisations { get; set; }
 
         public DisplayViewModel() { }
@@ -24,6 +25,7 @@ namespace Portfolio.ViewModels.Competences
         {
             this.CompetenceId = instance.Id;
             this.Name = instance.Name;
+            this.ImageName = instance.ImageName;
             this.Description = instance.Description;
 
             this.LinkedRealisations = new List<Realisation>();
