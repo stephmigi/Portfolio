@@ -5,15 +5,29 @@
 
 @model Portfolio.ViewModels.Realisations.ListViewModel
 
-Voici les réalisations auxquelles j'ai pu participer au cours de mes années d'études ainsi qu'à travers des expériences personnelles.
+<div class="realisation-container">
+    @foreach (var real in Model.Realisations)
+    {
+        <div class="a-realisation">
+            <img src="~/Content/img/logos/@real.ImageName" />
+            @Html.ActionLink(real.Name, "Detail", new { id = real.Id })
+            
+        </div>
+    }
 
     @foreach (var real in Model.Realisations)
     {
-        <div class="realisation-summary">
+        <div class="a-realisation">
             <img src="~/Content/img/logos/@real.ImageName" />
-            <div>
-                @real.ShortDescription
-                @Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", "SEE_MORE"), "Detail", new { id = real.Id })
-            </div>
+            @real.Name
         </div>
     }
+
+    @foreach (var real in Model.Realisations)
+    {
+        <div class="a-realisation">
+            <img src="~/Content/img/logos/@real.ImageName" />
+            @real.Name
+        </div>
+    }
+</div>
