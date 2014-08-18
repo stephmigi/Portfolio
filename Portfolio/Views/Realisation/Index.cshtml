@@ -19,7 +19,7 @@
     {
         <div class="a-realisation">
             <img src="~/Content/img/logos/@real.ImageName" />
-            @real.Name
+            @Html.ActionLink(real.Name, "Detail", new { id = real.Id })
         </div>
     }
 
@@ -27,7 +27,7 @@
     {
         <div class="a-realisation">
             <img src="~/Content/img/logos/@real.ImageName" />
-            @real.Name
+            @Html.ActionLink(real.Name, "Detail", new { id = real.Id })
         </div>
     }
 </div>
