@@ -3,7 +3,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using ObjectModel.Helpers
+@using ObjectModel.Realisations
 @model Portfolio.ViewModels.Realisations.ListViewModel
+
+<div class ="filters">
+    @using (Html.BeginForm("Index", "Realisation"))
+    {
+        @Html.Label("Type de projet : ")
+        @Html.DropDownList("RealisationTypesItems");
+        <input type="submit" name="Envoyer" />
+    }
+</div>
+<hr />
 
 <div class="realisation-container">
     @foreach (var real in Model.Realisations)

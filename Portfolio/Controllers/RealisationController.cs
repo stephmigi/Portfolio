@@ -12,6 +12,9 @@ using Portfolio.ViewModels.Realisations;
 
 namespace Portfolio.Controllers
 {
+    using ObjectModel.Helpers;
+    using ObjectModel.Realisations;
+
     public class RealisationController : BaseController
     {
         private RealisationAndCompetenceService _realAndCompService;
@@ -25,7 +28,7 @@ namespace Portfolio.Controllers
         public ActionResult Index()
         {
             var realisationList = _realAndCompService.GetAllRealisations();
-            var model = new ListViewModel(realisationList);
+            var model = new ListViewModel(realisationList, EnumHelpers.GetValues<RealisationType>());
             return View("Index", model);  
         }
 
