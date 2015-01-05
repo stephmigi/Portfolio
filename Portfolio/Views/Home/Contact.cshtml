@@ -1,4 +1,5 @@
 ﻿@{
+    
     ViewBag.Title = "About";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -7,15 +8,20 @@
 @ObjectModel.Helpers.ResourceHelpers.GetString("General", "HOME_CONTACT_CONTACTME")
 @using (Html.BeginForm("Contact", "Home"))
 {
-    <div>
-        @Html.LabelFor(m => m.YourMail)
-        @Html.EditorFor(m => m.YourMail)
-        @Html.ValidationMessageFor(m => m.YourMail)
+    <div class="input-group input-group-lg">
+        <div>
+            @Html.LabelFor(m => m.YourMail, ObjectModel.Helpers.ResourceHelpers.GetString("GENERAL", "CONTACT_YOURMAIL"))
+            @Html.TextBoxFor(m => m.YourMail, new { @class = "form-control" })
+            
+        </div>
+        <div>@Html.ValidationMessageFor(m => m.YourMail)</div>
+        <div>
+            @Html.LabelFor(m => m.YourMessage, ObjectModel.Helpers.ResourceHelpers.GetString("GENERAL", "CONTACT_YOURMESSAGE"))
+            @Html.TextAreaFor(m => m.YourMessage, new { @class = "form-control" })
+           
+        </div>
+        <div>@Html.ValidationMessageFor(m => m.YourMessage)</div>
     </div>
-    <div>
-        @Html.LabelFor(m => m.YourMessage)
-        @Html.TextAreaFor(m => m.YourMessage)
-        @Html.ValidationMessageFor(m => m.YourMessage)
-    </div>
-    <input type="submit" name="Envoyer" />
+    <br />
+    <input type="submit" value="@ObjectModel.Helpers.ResourceHelpers.GetString("GENERAL", "GENERAL_SUBMIT")" />
 }

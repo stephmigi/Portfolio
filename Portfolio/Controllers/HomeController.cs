@@ -12,6 +12,7 @@ using System.Web.Mvc;
 namespace Portfolio.Controllers
 {
     using System.Net.Mail;
+    using System.Web.UI.WebControls;
 
     using Portfolio.ViewModels;
 
@@ -27,6 +28,16 @@ namespace Portfolio.Controllers
             return View();
         }
 
+        public ActionResult ViewCV()
+        {
+            return this.View();
+        }
+
+        public FileResult DownloadCv()
+        {
+            return File("~/Content/cv.pdf", "application/pdf", "CV.pdf");  
+        }
+
         public ActionResult Contact()
         {
             return View("Contact", new ContactViewModel());
@@ -35,21 +46,38 @@ namespace Portfolio.Controllers
         [HttpPost]
         public ActionResult Contact(ContactViewModel model)
         {
-            MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-
-            mail.From = new MailAddress(model.YourMail);
-            mail.To.Add("stephane.miginiac@gmail.com");
-            mail.Subject = "Message from : " + model.YourMail;
-            mail.Body = model.YourMessage;
-
-            SmtpServer.Port = 587;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("stephmigi.portfolio@gmail.com", "halflife#A");
-            SmtpServer.EnableSsl = true;
-
-            SmtpServer.Send(mail);
-
+            if (ModelState.IsValid)
+            {
+                SendContactMail(model.YourMail, model.YourMessage);
+            }
+            
             return this.View();
+        }
+
+        private void SendContactMail(string from, string content)
+        {
+            try
+            {
+                var mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress(from);
+                mail.To.Add("stephane.miginiac@gmail.com");
+                mail.Subject = "Message from : " + from;
+                mail.Body = content;
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("stephmigi.portfolio@gmail.com", "halflife#A");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+                // to do
+            }
         }
     }
 }

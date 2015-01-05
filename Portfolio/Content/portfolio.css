@@ -6,6 +6,10 @@ hr {
     margin:0;
 }
 
+textarea {
+    resize: none;
+}
+
 /* Layout */
 
 .navbar-default {
@@ -89,4 +93,17 @@ hr {
 .realisation-detail .competenceblock {
     float:left;
     width:25%;
+}
+
+/* CV Viewer */
+#showOnline {
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#CVViewer {
+    display: none;
+    min-width: 500px;
+    min-height: 900px;
 }

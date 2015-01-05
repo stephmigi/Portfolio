@@ -7,6 +7,7 @@
                 <li class="active">@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Home]), "Index", "Home")</li>
                 <li>@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Competences]), "Index", "Competence")</li>
                 <li>@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Realisations]), "Index", "Realisation")</li>
+                <li>@Html.ActionLink("CV", "ViewCV", "Home")</li>
                 <li>@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Contact]), "Contact", "Home")</li>
             </ul>
         </div>

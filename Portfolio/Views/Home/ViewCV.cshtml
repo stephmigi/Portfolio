@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "CV";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    @Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("GENERAL", "CV_DOWNLOAD_CV"), "DownloadCV", null, new { id = "downloadCVLink" })
+    <span id ="showOnline">@ObjectModel.Helpers.ResourceHelpers.GetString("GENERAL", "CV_SEEONLINE")</span>
+</div>
+
+<embed src="~/Content/cv.pdf" id="CVViewer">
+
+<script>
+    $("#showOnline").click( function(){
+        $("#CVViewer").toggle();
+    });
+</script>

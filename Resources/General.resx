@@ -138,4 +138,19 @@
   <data name="SEE_MORE" xml:space="preserve">
     <value>See more</value>
   </data>
+  <data name="CONTACT_YOURMESSAGE" xml:space="preserve">
+    <value>Your message</value>
+  </data>
+  <data name="CONTACT_YOURMAIL" xml:space="preserve">
+    <value>Your email address</value>
+  </data>
+  <data name="CV_DOWNLOAD_CV" xml:space="preserve">
+    <value>Download my CV</value>
+  </data>
+  <data name="CV_SEEONLINE" xml:space="preserve">
+    <value>or check it out online (Adobe Reader required)</value>
+  </data>
+  <data name="GENERAL_SUBMIT" xml:space="preserve">
+    <value>Submit</value>
+  </data>
 </root>

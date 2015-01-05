@@ -21,6 +21,8 @@ namespace ObjectModel
         Realisations,
 
         [Description("NAVBAR_MENUITEM_CONTACT")]
-        Contact
+        Contact, 
+
+        CV
     }
 }

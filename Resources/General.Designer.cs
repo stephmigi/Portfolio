@@ -61,6 +61,51 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your email address.
+        /// </summary>
+        internal static string CONTACT_YOURMAIL {
+            get {
+                return ResourceManager.GetString("CONTACT_YOURMAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your message.
+        /// </summary>
+        internal static string CONTACT_YOURMESSAGE {
+            get {
+                return ResourceManager.GetString("CONTACT_YOURMESSAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download my CV.
+        /// </summary>
+        internal static string CV_DOWNLOAD_CV {
+            get {
+                return ResourceManager.GetString("CV_DOWNLOAD_CV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to or check it out online (Adobe Reader required).
+        /// </summary>
+        internal static string CV_SEEONLINE {
+            get {
+                return ResourceManager.GetString("CV_SEEONLINE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        internal static string GENERAL_SUBMIT {
+            get {
+                return ResourceManager.GetString("GENERAL_SUBMIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  You have a question ? You wish to contact me ? Feel free !.
         /// </summary>
         internal static string HOME_CONTACT_CONTACTME {
