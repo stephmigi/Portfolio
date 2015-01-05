@@ -2,19 +2,20 @@
     ViewBag.Title = "About";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model Portfolio.ViewModels.ContactViewModel
 
 @ObjectModel.Helpers.ResourceHelpers.GetString("General", "HOME_CONTACT_CONTACTME")
 @using (Html.BeginForm("Contact", "Home"))
 {
     <div>
-        @Html.Label("Votre adresse email :")
-        <br />
-        @Html.TextArea("name")
+        @Html.LabelFor(m => m.YourMail)
+        @Html.EditorFor(m => m.YourMail)
+        @Html.ValidationMessageFor(m => m.YourMail)
     </div>
     <div>
-        @Html.Label("Votre message :")
-        <br />
-        @Html.TextArea("message")
+        @Html.LabelFor(m => m.YourMessage)
+        @Html.TextAreaFor(m => m.YourMessage)
+        @Html.ValidationMessageFor(m => m.YourMessage)
     </div>
     <input type="submit" name="Envoyer" />
 }
