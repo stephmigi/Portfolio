@@ -8,6 +8,7 @@ hr {
 
 textarea {
     resize: none;
+    min-height: 100px;
 }
 
 /* Layout */
