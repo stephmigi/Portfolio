@@ -106,6 +106,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About me.
+        /// </summary>
+        internal static string HOME_ABOUT_ME {
+            get {
+                return ResourceManager.GetString("HOME_ABOUT_ME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  You have a question ? You wish to contact me ? Feel free !.
         /// </summary>
         internal static string HOME_CONTACT_CONTACTME {
@@ -123,6 +132,24 @@ namespace Resources {
         internal static string HOME_GREETING_MESSAGE {
             get {
                 return ResourceManager.GetString("HOME_GREETING_MESSAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My personality radar.
+        /// </summary>
+        internal static string HOME_PERSONALITY_RADAR {
+            get {
+                return ResourceManager.GetString("HOME_PERSONALITY_RADAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Talent ID.
+        /// </summary>
+        internal static string HOME_TALENT_ID {
+            get {
+                return ResourceManager.GetString("HOME_TALENT_ID", resourceCulture);
             }
         }
         

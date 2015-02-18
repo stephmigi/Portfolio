@@ -131,6 +131,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\img\home\Address.png" />
+    <Content Include="Content\img\home\mail.png" />
+    <Content Include="Content\img\home\radar.PNG" />
+    <Content Include="Content\img\home\skype.jpg" />
+    <Content Include="Content\img\home\talentoday1.PNG" />
+    <Content Include="Content\img\mypic.png" />
     <Content Include="Content\portfolio.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\cv.pdf" />

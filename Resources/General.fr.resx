@@ -140,6 +140,15 @@
   C'est après 3 ans de cours, 6 mois de stage et 2 ans d'alternance que j'arrive à bout de mon cursus, prêt à partir vers de nouvelles aventures.
   Que diriez-vous de faire un bout de chemin avec moi?</value>
   </data>
+  <data name="HOME_ABOUT_ME" xml:space="preserve">
+    <value> A propos de moi</value>
+  </data>
+  <data name="HOME_PERSONALITY_RADAR" xml:space="preserve">
+    <value>Mon radar de personnalité</value>
+  </data>
+  <data name="HOME_TALENT_ID" xml:space="preserve">
+    <value>Mon Talent ID</value>
+  </data>
   <data name="SEE_MORE" xml:space="preserve">
     <value>En savoir plus</value>
   </data>
