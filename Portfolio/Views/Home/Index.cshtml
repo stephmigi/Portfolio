@@ -3,4 +3,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@ObjectModel.Helpers.ResourceHelpers.GetString("General", "HOME_GREETING_MESSAGE")
+<div id="aboutMe">
+    <h3>A propos de moi</h3>
+    <img src="~/Content/img/mypic.png" id="mypic" />
+    @ObjectModel.Helpers.ResourceHelpers.GetString("General", "HOME_GREETING_MESSAGE")
+</div>
+
+<div id="contactMe">
+    <h3>Me contacter</h3>
+    <a href="mailto:stephane.miginiac@gmail.com" title="stephane.miginiac@gmail.com"><img src="~/Content/img/home/mail.png" /></a>
+    <a href="skype:xtssteph?userinfo" title="xtssteph"><img src="~/Content/img/home/skype.jpg" /></a>
+</div>
+
+<div id="myRadar">
+    <h3>Mon radar de personnalité</h3>
+    <img src="~/Content/img/home/radar.PNG"/>
+</div>

@@ -115,7 +115,10 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome on my portfolio ! Enjoy your visit !.
+        ///   Looks up a localized string similar to Welcome on my portfolio ! My name is Stéphane Miginiac, I&apos;m 25, french, and student in my fifth and last year at Intech&apos;Info.
+        ///    I&apos;ve always been passionate about new technologies which is why I decided to study computer engineering after obtaining my Baccalauréat.
+        ///    After some years of doubts, I finally joined Intech&apos;Info school, which has the advantage of combining theoretical classes and more practical classes.
+        ///  And here I am, after 3 years of classes, 6 months of internship and 2 years of apprent [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HOME_GREETING_MESSAGE {
             get {

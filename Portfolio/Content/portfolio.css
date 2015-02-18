@@ -108,3 +108,20 @@ textarea {
     min-width: 500px;
     min-height: 900px;
 }
+
+/* Home */
+#mypic {
+    height: 120px;
+    float: left;
+    margin-right: 15px;
+}
+
+#contactMe {
+    clear: left;
+    position: relative;
+    margin-top: 25px
+}
+
+#contactMe img{
+    height: 40px;
+}

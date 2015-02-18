@@ -133,7 +133,10 @@
     <value> You have a question ? You wish to contact me ? Feel free !</value>
   </data>
   <data name="HOME_GREETING_MESSAGE" xml:space="preserve">
-    <value>Welcome on my portfolio ! Enjoy your visit !</value>
+<value>Welcome on my portfolio ! My name is Stéphane Miginiac, I'm 25, french, and student in my fifth and last year at Intech'Info.
+    I've always been passionate about new technologies which is why I decided to study computer engineering after obtaining my Baccalauréat.
+    After some years of doubts, I finally joined Intech'Info school, which has the advantage of combining theoretical classes and more practical classes.
+  And here I am, after 3 years of classes, 6 months of internship and 2 years of apprenticeship, ready to move on to new adventures. How about joining me ?</value>
   </data>
   <data name="SEE_MORE" xml:space="preserve">
     <value>See more</value>

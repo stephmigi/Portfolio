@@ -47,13 +47,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="General.en.resx" />
+    <EmbeddedResource Include="General.en.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="General.fr.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="General.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>General.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

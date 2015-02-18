@@ -133,7 +133,12 @@
     <value> Vous avez une question ? Vous souhaitez me contacter ? N'hésitez pas !</value>
   </data>
   <data name="HOME_GREETING_MESSAGE" xml:space="preserve">
-    <value>Bonjour et bienvenue sur mon portfolio !</value>
+    <value>Bonjour et bienvenue sur mon portfolio !
+    Je m'appelle Stéphane Miginiac, j'ai 25 ans et je suis étudiant en dernière année à Intech'Info.
+  Etant passionné par les nouvelles technologies depuis mon adolescence, j'ai décidé, de faire mes études supérieures dans le domaine de l'informatique.
+  Après quelques années de doute et de tergiversations, j'ai intégré l'école INTECH'INFO, école dont la particularité est de mêler théorique et pratique. 
+  C'est après 3 ans de cours, 6 mois de stage et 2 ans d'alternance que j'arrive à bout de mon cursus, prêt à partir vers de nouvelles aventures.
+  Que diriez-vous de faire un bout de chemin avec moi?</value>
   </data>
   <data name="SEE_MORE" xml:space="preserve">
     <value>En savoir plus</value>
