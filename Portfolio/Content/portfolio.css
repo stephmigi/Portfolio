@@ -20,9 +20,9 @@ textarea {
 
 .content {
     position:relative;
-    top:70px;
-    left:24px;
     margin-bottom:85px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 /* Footer */
@@ -119,7 +119,7 @@ textarea {
 #contactMe {
     clear: left;
     position: relative;
-    margin-top: 25px
+    margin-top: 25px;
 }
 
 #contactMe img{
