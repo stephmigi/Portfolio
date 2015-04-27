@@ -190,7 +190,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to See more.
+        ///   Looks up a localized string similar to Read more.
         /// </summary>
         internal static string SEE_MORE {
             get {
