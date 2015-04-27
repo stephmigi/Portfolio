@@ -1,18 +1,21 @@
 ﻿using ObjectModel;
-using System;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Portfolio.ViewModels.Layout
 {
     public class NavBarViewModel
     {
         public Dictionary<NavigationBarItem, string> NavItems { get; set; }
+
+        public string CurrentController { get; set; }
+
+        public NavigationBarItem ActiveTab { get; set; }
         
-        public NavBarViewModel(Dictionary<NavigationBarItem, string> navItems)
+        public NavBarViewModel(Dictionary<NavigationBarItem, string> navItems, NavigationBarItem activeTab)
         {
             NavItems = navItems;
+            ActiveTab = activeTab;
         }
     }
 }

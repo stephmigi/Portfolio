@@ -14,7 +14,7 @@
     <div class="competenceblock">
         <span>Réalisations associés :</span>
         <ul>
-            @foreach (var real in Model.LinkedRealisations)
+            @foreach (var real in Model.LinkedRealisations.OrderBy(p => p.Name))
             { 
                 <li>@Html.ActionLink(real.Name, "Detail", "Realisation", new { id = real.Id }, null)</li>
             }

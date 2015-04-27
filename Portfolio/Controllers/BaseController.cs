@@ -10,11 +10,12 @@ namespace Portfolio.Controllers
 {
     public class BaseController : Controller
     {
-        public readonly string ActiveController;
-
         public BaseController()
         {
-            ActiveController = System.Web.HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+            var activeTabInfo = new Dictionary<string, string>();
+            activeTabInfo.Add("action", System.Web.HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString());
+            activeTabInfo.Add("controller", System.Web.HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString());
+            ViewBag.ActiveTabInfo = activeTabInfo;
         }
 
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)

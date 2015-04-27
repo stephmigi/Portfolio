@@ -16,7 +16,7 @@
 </head>
 <body>
     <!-- Header -->
-    @Html.Action("NavigationBar", "Layout")
+    @Html.Action("NavigationBar", "Layout", new { activeTabInfo = ViewBag.ActiveTabInfo })
 
     <!-- Body -->
     <div class ="content">

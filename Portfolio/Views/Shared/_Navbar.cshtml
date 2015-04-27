@@ -8,15 +8,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="@Url.Action("Index", "Home")">Portfolio Stéphane Miginiac</a>
-        </div>
+        </div> 
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active">@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Home]), "Index", "Home")</li>
-                <li>@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Competences]), "Index", "Competence")</li>
-                <li>@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Realisations]), "Index", "Realisation")</li>
-                <li>@Html.ActionLink("CV", "ViewCV", "Home")</li>
-                <li>@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Contact]), "Contact", "Home")</li>
+                @{ string active = Model.ActiveTab == NavigationBarItem.Home ? "active" : string.Empty;}
+                <li class="@active">@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Home]), "Index", "Home")</li>
+                @{ active = Model.ActiveTab == NavigationBarItem.Competences ? "active" : string.Empty;}
+                <li class="@active">@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Competences]), "Index", "Competence")</li>
+                @{ active = Model.ActiveTab == NavigationBarItem.Realisations ? "active" : string.Empty;}
+                <li class="@active">@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Realisations]), "Index", "Realisation")</li>
+                @{ active = Model.ActiveTab == NavigationBarItem.Contact ? "active" : string.Empty;}
+                <li class="@active">@Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", Model.NavItems[NavigationBarItem.Contact]), "Contact", "Home")</li>
             </ul>
         </div>
     </div>

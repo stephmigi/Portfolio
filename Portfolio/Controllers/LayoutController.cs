@@ -1,19 +1,20 @@
 ﻿using ObjectModel;
 using ObjectModel.Helpers;
 using Portfolio.ViewModels.Layout;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+
 using System.Web.Mvc;
 
 namespace Portfolio.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+
     public class LayoutController : BaseController
     {
-        public ActionResult NavigationBar()
+        public ActionResult NavigationBar(Dictionary<string,string> activeTabInfo)
         {
-            var model = new NavBarViewModel(EnumHelpers.GetAllElementsWithResourceKey<NavigationBarItem>());
+            var activeTab = this.GetActiveNavBarItem(activeTabInfo["controller"], activeTabInfo["action"]);
+            var model = new NavBarViewModel(EnumHelpers.GetAllElementsWithResourceKey<NavigationBarItem>(), activeTab);
 
             return View("_Navbar", model);
         }
@@ -22,6 +23,20 @@ namespace Portfolio.Controllers
         {
             CreateCookie("Language", id);
             Response.Redirect(Request.UrlReferrer.ToString());
+        }
+
+        private NavigationBarItem GetActiveNavBarItem(string controller, string action)
+        {
+            switch (controller)
+            {
+                case "Home":
+                    return action == "Contact" ? NavigationBarItem.Contact : NavigationBarItem.Home;
+                case "Realisation":
+                    return NavigationBarItem.Realisations;
+                case "Competence":
+                    return NavigationBarItem.Competences;
+            }
+            throw new NotSupportedException("Action must exist");
         }
     }
 }
