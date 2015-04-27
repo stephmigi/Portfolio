@@ -5,14 +5,14 @@
 
 @model Portfolio.ViewModels.Realisations.ListViewModel
 
-Voici les réalisations auxquelles j'ai pu participer au cours de mes années d'études ainsi qu'à travers des expériences personnelles.
+<h2>Mes réalisations</h2>
 
     @foreach (var real in Model.Realisations)
     {
         <div class="realisation-summary">
             <img src="~/Content/img/logos/@real.ImageName" />
             <div>
-                <span class="realisationName">@real.Name</span> @real.ShortDescription   
+                <span class="realisationName">@real.Name</span> @real.ShortDescription
                 @Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", "SEE_MORE"), "Detail", new { id = real.Id })
             </div>
         </div>
