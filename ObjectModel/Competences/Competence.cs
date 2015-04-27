@@ -8,6 +8,8 @@ using ObjectModel.Database;
 
 namespace ObjectModel.Competences
 {
+    using System.Text.RegularExpressions;
+
     using ObjectModel.Extensions;
 
     public class Competence
@@ -23,7 +25,7 @@ namespace ObjectModel.Competences
         {
             get
             {
-                return Description.EllipseString(200);
+                return Regex.Replace(this.Description, "<.*?>", string.Empty).EllipseString(200);
 
             }
         }

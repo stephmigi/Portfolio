@@ -9,6 +9,8 @@ using ObjectModel.Database;
 
 namespace ObjectModel.Realisations
 {
+    using System.Text.RegularExpressions;
+
     public class Realisation
     {
         #region properties
@@ -19,7 +21,7 @@ namespace ObjectModel.Realisations
         {
             get
             {
-                return Description.EllipseString(200);
+                return Regex.Replace(this.Description, "<.*?>", string.Empty).EllipseString(200);
             }
         }
 
