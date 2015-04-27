@@ -34,6 +34,8 @@ public partial class Competence
 
     public Nullable<int> CompetenceType { get; set; }
 
+    public string LogoUrl { get; set; }
+
 
 
     public virtual ICollection<Realisation> Realisations { get; set; }

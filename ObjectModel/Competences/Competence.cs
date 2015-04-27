@@ -58,7 +58,7 @@ namespace ObjectModel.Competences
             this.Id = dbObject.Id;
             this.Description = dbObject.Description;
             this.Name = dbObject.Name;
-            this._imageName = "NoLogo.gif";
+            this._imageName = dbObject.LogoUrl;
 
             this.Type = (CompetenceType)dbObject.CompetenceType;
 
