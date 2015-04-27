@@ -7,7 +7,7 @@
 
 <h2>@Model.Name</h2>
 
-<div class ="realisation-description">@Model.Description</div>
+<div class ="realisation-description">@Html.Raw(Model.Description)</div>
 <img src="~/Content/img/logos/@Model.ImageName" class="realisation-logo" />
 
 <div class="realisation-detail">
