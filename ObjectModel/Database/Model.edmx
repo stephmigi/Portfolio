@@ -31,6 +31,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
           <Property Name="Description" Type="text" />
           <Property Name="LogoName" Type="nvarchar" MaxLength="100" />
+          <Property Name="RealisationType" Type="int" />
         </EntityType>
         <Association Name="FK__Competenc__Compe__1920BF5C">
           <End Role="Competence" Type="Self.Competence" Multiplicity="1" />
@@ -82,6 +83,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="LogoName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Competences" Relationship="SMPortfolioModel.CompetenceByRealisation" FromRole="Realisation" ToRole="Competence" />
+          <Property Name="RealisationType" Type="Int32" />
         </EntityType>
         <EntityContainer Name="SMPortfolioEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Realisations" EntityType="Self.Realisation" />
@@ -115,6 +117,7 @@
           <EntitySetMapping Name="Realisations">
             <EntityTypeMapping TypeName="SMPortfolioModel.Realisation">
               <MappingFragment StoreEntitySet="Realisation">
+                <ScalarProperty Name="RealisationType" ColumnName="RealisationType" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Description" ColumnName="Description" />

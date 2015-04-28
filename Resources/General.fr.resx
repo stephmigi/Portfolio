@@ -167,4 +167,19 @@
   <data name="GENERAL_SUBMIT" xml:space="preserve">
     <value>Envoyer</value>
   </data>
+  <data name="GENERAL_TECHNICAL_COMPETENCES" xml:space="preserve">
+    <value>Compétences techniques</value>
+  </data>
+  <data name="GENERAL_HUMAN_COMPETENCES" xml:space="preserve">
+    <value>Compétences humaines</value>
+  </data>
+  <data name="GENERAL_REALISATIONTYPE_SCHOOL" xml:space="preserve">
+    <value>Projets d'école</value>
+  </data>
+  <data name="GENERAL_REALISATIONTYPE_BUSINESS" xml:space="preserve">
+    <value>Projets d'entreprise</value>
+  </data>
+  <data name="GENERAL_REALISATIONTYPE_OTHER" xml:space="preserve">
+    <value>Autres projets</value>
+  </data>
 </root>

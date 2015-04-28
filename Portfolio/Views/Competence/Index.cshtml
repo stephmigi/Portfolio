@@ -3,19 +3,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using ObjectModel.Competences
+@using ObjectModel.Helpers
 @model Portfolio.ViewModels.Competences.ListViewModel
 
 <h2>Mes compétences</h2>
 
 <div>
-    @foreach (var comp in Model.Competences)
-    {
-        <div class="realisation-summary">
-            <img src="~/Content/img/logos/@comp.ImageName" />
-            <div>
-                <span class="realisationName">@comp.Name</span> @comp.ShortDescription
-                @Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", "SEE_MORE"), "Detail", new { id = comp.Id })
+    @foreach (CompetenceType compType in Enum.GetValues(typeof(CompetenceType)))
+    { 
+        <h3>@EnumHelpers.GetResourceText(compType)</h3>
+        foreach (var comp in Model.Competences.Where(p => p.Type == compType))
+        {
+            <div class="realisation-summary">
+                <img src="~/Content/img/logos/@comp.ImageName" />
+                <div>
+                    <span class="realisationName">@comp.Name</span> @comp.ShortDescription
+                    @Html.ActionLink(ObjectModel.Helpers.ResourceHelpers.GetString("General", "SEE_MORE"), "Detail", new { id = comp.Id })
+                </div>
             </div>
-        </div>
+        }
     }
 </div>

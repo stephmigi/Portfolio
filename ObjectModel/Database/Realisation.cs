@@ -34,6 +34,8 @@ public partial class Realisation
 
     public string LogoName { get; set; }
 
+    public Nullable<int> RealisationType { get; set; }
+
 
 
     public virtual ICollection<Competence> Competences { get; set; }

@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ObjectModel.Realisations
+﻿namespace ObjectModel.Realisations
 {
+    using System.ComponentModel;
+
     public enum RealisationType
     {
-        Technical,
-        Human
+        [Description("GENERAL_REALISATIONTYPE_SCHOOL")]
+        SchoolProject = 1,
+
+        [Description("GENERAL_REALISATIONTYPE_BUSINESS")]
+        EntrepriseProject = 2,
+
+        [Description("GENERAL_REALISATIONTYPE_OTHER")]
+        Other = 3
     }
 }

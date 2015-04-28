@@ -59,6 +59,7 @@ namespace ObjectModel.Realisations
             this._imageName = dbObject.LogoName;
             this.Description = dbObject.Description;
             this.Name = dbObject.Name;
+            this.Type = (RealisationType)dbObject.RealisationType;
 
             this.CompetenceIds = new List<int>();
 

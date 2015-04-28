@@ -97,11 +97,56 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Human skills.
+        /// </summary>
+        internal static string GENERAL_HUMAN_COMPETENCES {
+            get {
+                return ResourceManager.GetString("GENERAL_HUMAN_COMPETENCES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Business projects.
+        /// </summary>
+        internal static string GENERAL_REALISATIONTYPE_BUSINESS {
+            get {
+                return ResourceManager.GetString("GENERAL_REALISATIONTYPE_BUSINESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other projects.
+        /// </summary>
+        internal static string GENERAL_REALISATIONTYPE_OTHER {
+            get {
+                return ResourceManager.GetString("GENERAL_REALISATIONTYPE_OTHER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to School project.
+        /// </summary>
+        internal static string GENERAL_REALISATIONTYPE_SCHOOL {
+            get {
+                return ResourceManager.GetString("GENERAL_REALISATIONTYPE_SCHOOL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Submit.
         /// </summary>
         internal static string GENERAL_SUBMIT {
             get {
                 return ResourceManager.GetString("GENERAL_SUBMIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Technical skills.
+        /// </summary>
+        internal static string GENERAL_TECHNICAL_COMPETENCES {
+            get {
+                return ResourceManager.GetString("GENERAL_TECHNICAL_COMPETENCES", resourceCulture);
             }
         }
         

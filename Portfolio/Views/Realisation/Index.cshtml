@@ -3,11 +3,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using ObjectModel.Helpers
+@using ObjectModel.Realisations
 @model Portfolio.ViewModels.Realisations.ListViewModel
 
 <h2>Mes réalisations</h2>
 
-    @foreach (var real in Model.Realisations)
+@foreach (RealisationType realisationType in Enum.GetValues(typeof(RealisationType)))
+{
+    <h3>@EnumHelpers.GetResourceText(realisationType)</h3>
+    foreach (var real in Model.Realisations.Where(p => p.Type == realisationType))
     {
         <div class="realisation-summary">
             <img src="~/Content/img/logos/@real.ImageName" />
@@ -17,3 +22,5 @@
             </div>
         </div>
     }
+}
+

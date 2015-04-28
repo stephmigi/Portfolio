@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ObjectModel.Competences
+﻿namespace ObjectModel.Competences
 {
+    using System.ComponentModel;
+
     /// <summary>
     /// Defines the types of competences.
     /// </summary>
     public enum CompetenceType
     {
-        TechnicalProject = 1,
-        HumanProject = 2
+        [Description("GENERAL_TECHNICAL_COMPETENCES")]
+        TechnicalCompetence = 1,
+
+        [Description("GENERAL_HUMAN_COMPETENCES")]
+        HumanCompetence = 2
     }
 }
