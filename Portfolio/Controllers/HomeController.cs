@@ -18,11 +18,6 @@ namespace Portfolio.Controllers
 
     public class HomeController : BaseController
     {
-        public HomeController()
-        {
-            @ViewBag.Active = "Home";
-        }
-
         public ActionResult Index()
         {
             return View();

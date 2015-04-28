@@ -18,7 +18,6 @@ namespace Portfolio.Controllers
 
         public RealisationController()
         {
-            @ViewBag.Active = "Realisation";
             this._realAndCompService = new RealisationAndCompetenceService(new SMEntityRepository<ObjectModel.Database.Realisation, ObjectModel.Realisations.Realisation>(new SMPortfolioEntities()), new SMEntityRepository<ObjectModel.Database.Competence, ObjectModel.Competences.Competence>(new SMPortfolioEntities()));
         }
 
