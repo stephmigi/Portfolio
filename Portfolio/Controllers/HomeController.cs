@@ -1,18 +1,15 @@
-﻿using ObjectModel;
-using ObjectModel.Helpers;
-using Portfolio.ViewModels.Layout;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Threading;
-using System.Web;
+﻿using System;
 using System.Web.Mvc;
 
 namespace Portfolio.Controllers
 {
+    using System.Collections.Generic;
     using System.Net.Mail;
-    using System.Web.UI.WebControls;
+
+    using DotNet.Highcharts;
+    using DotNet.Highcharts.Enums;
+    using DotNet.Highcharts.Helpers;
+    using DotNet.Highcharts.Options;
 
     using Portfolio.ViewModels;
 
@@ -20,7 +17,22 @@ namespace Portfolio.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var technicalCompetences = new string[] { "C#", "SQL", "PHP", "Orchard", "C", "HTML/CSS", "Git/SVN" };
+            var technicalCompetencesRating = new object[] { 8, 7, 9, 6, 8, 9, 7 };
+
+            var humanCompetences = new string[]
+                                       {
+                                           "Communication", "Autonomie", "Anglais", "Gestion de projet",
+                                           "Formation"
+                                       };
+            var humanCompetencesRating = new object[] { 8, 9, 9, 6, 7 };
+
+            var chartHumanCompetences = this.GeneratePolarRadarChart("chartHumanCompetences", "Compétences humaines", humanCompetences, humanCompetencesRating);
+            var chartTechnicalCompetences = this.GeneratePolarRadarChart("chartTechnicalCompetences", "Compétences techniques",technicalCompetences, technicalCompetencesRating);
+
+            var vm = new HomeIndexViewModel(chartHumanCompetences, chartTechnicalCompetences);
+
+            return View(vm);
         }
 
         public ActionResult ViewCV()
@@ -73,6 +85,53 @@ namespace Portfolio.Controllers
 
                 // to do
             }
+        }
+
+        private Chart BuildChart()
+        {
+            var chart = new Chart { Type = ChartTypes.Line, Polar = true };
+            return chart;
+        }
+
+        private Highcharts GeneratePolarRadarChart(string name, string displayName, string[] categories, object[] values)
+        {
+            var chart2 = new Highcharts(name).InitChart(new Chart { DefaultSeriesType = ChartTypes.Column })
+            .InitChart(new Chart
+            {
+                Width = 500,
+                Polar = true,
+                Type = ChartTypes.Line
+            })
+            .SetTitle(new Title
+            {
+                Text = displayName,
+                X = -20
+            })
+            .SetXAxis(new XAxis
+            {
+                Categories = categories
+            })
+            .SetYAxis(new YAxis
+            {
+                GridLineInterpolation = "polygon",
+                LineWidth = 0,
+                Min = 0,
+                Labels = new YAxisLabels
+                {
+                    Enabled = false
+                }
+            })
+            .SetExporting(new Exporting { Enabled = false })
+            .SetSeries(new[]
+            {
+                new Series
+                {
+                    Name = "Note sur 10",
+                    Data = new Data(values)                 
+                },
+            });
+
+            return chart2;
         }
     }
 }

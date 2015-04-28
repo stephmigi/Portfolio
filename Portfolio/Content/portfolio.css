@@ -130,3 +130,11 @@ textarea {
 #contactMe img{
     height: 40px;
 }
+
+.competenceChart {
+    float: left;
+}
+
+#myTalentId {
+    clear: both;
+}

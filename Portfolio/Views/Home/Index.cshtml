@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Portfolio.ViewModels.HomeIndexViewModel
+
+@{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -17,10 +19,15 @@
     <a href="https://www.google.fr/maps/place/Paris/&#64;48.858859,2.3470599,13z/data=!3m1!4b1!4m2!3m1!1s0x47e66e1f06e2b70f:0x40b82c3688c9460" title="Paris, France"><img src="~/Content/img/home/Address.png" /></a>
 </div>
 
-<div id="myRadar">
-    <h3>@ObjectModel.Helpers.ResourceHelpers.GetString("General", "HOME_PERSONALITY_RADAR")</h3>
-    <img src="~/Content/img/home/radar.PNG"/>
+<div class ="competenceChart">
+    @(Model.HumanCompetencesChart)
 </div>
+
+<div class="competenceChart">
+    @(Model.TechnicalCompetencesChart)
+</div>
+
+
 
 <div id="myTalentId">
     <h3>@ObjectModel.Helpers.ResourceHelpers.GetString("General", "HOME_TALENT_ID")</h3>
