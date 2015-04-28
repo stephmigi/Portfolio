@@ -98,14 +98,15 @@ namespace Portfolio.Controllers
             var chart2 = new Highcharts(name).InitChart(new Chart { DefaultSeriesType = ChartTypes.Column })
             .InitChart(new Chart
             {
-                Width = 500,
+                Width = 450,
                 Polar = true,
                 Type = ChartTypes.Line
             })
             .SetTitle(new Title
             {
                 Text = displayName,
-                X = -20
+                X = 0,
+                Style = "color: '#000', font: '20px Helvetica'"
             })
             .SetXAxis(new XAxis
             {
@@ -121,6 +122,10 @@ namespace Portfolio.Controllers
                     Enabled = false
                 }
             })
+            .SetLegend(new Legend
+                           {
+                               Enabled = false
+                           })
             .SetExporting(new Exporting { Enabled = false })
             .SetSeries(new[]
             {
