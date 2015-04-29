@@ -110,7 +110,11 @@ namespace Portfolio.Controllers
             })
             .SetXAxis(new XAxis
             {
-                Categories = categories
+                Categories = categories,
+                Labels = new XAxisLabels
+                             {
+                                 Style = "color: '#000', font: '11px Helvetica'"
+                             }
             })
             .SetYAxis(new YAxis
             {
