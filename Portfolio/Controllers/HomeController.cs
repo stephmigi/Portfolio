@@ -115,6 +115,10 @@ namespace Portfolio.Controllers
                                  Style = "color: '#000', font: '11px Helvetica'"
                              }
             })
+            .SetCredits(new Credits
+                            {
+                                Enabled = false
+                            })
             .SetYAxis(new YAxis
             {
                 GridLineInterpolation = "polygon",

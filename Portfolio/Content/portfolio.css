@@ -101,6 +101,13 @@ textarea {
     width:25%;
 }
 
+@media screen and (max-width: 700px) {
+    .realisation-summary {
+        height: 120px;
+        width: 100%;
+    }
+}
+
 /* CV Viewer */
 #showOnline {
     cursor: pointer;
@@ -151,12 +158,14 @@ textarea {
 }
 
 .competenceChart {
+    width: 410px;
     display: block;
     float: left;
 }
 
 .technicalChart {
     position: relative;
+    width: 410px;
 }
 
 #myTalentId {
@@ -178,7 +187,6 @@ textarea {
 
 #myCV {
     position: absolute;
-    z-index: 44564;
     top: 130px;
 }
 #myCV img {
@@ -192,26 +200,42 @@ textarea {
     top: 250px;
 }
 
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 1199px) {
     .leftBlock {
         border: none;
     }
+
+    #charts {
+        width: 850px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+    }
+
   .rightBlock {
         position: relative;
         top: 45px;
       margin-bottom: 200px;
     }
+
   #contactMe {
       float: left;
       position: relative;
       width: 33%;
+              text-align: center;
   }
+
     #myCV {
-      float: left;
+        float: left;
         position: relative;
         top: 0px;
         width: 33%;
-  }
+                text-align: center;
+    }
+
+        #myCV img{
+        display: inline;
+    }
 
     #timeline {
         position: relative;
@@ -224,17 +248,32 @@ textarea {
 @media screen and (max-width: 900px) {
     .leftBlock {
         border: none;
+        clear: both;
     }
+
+    #charts {
+        width: 450px;
+                margin-left: auto;
+        margin-right: auto;
+    }
+
   .rightBlock {
         position: relative;
         top: 45px;
-      margin-bottom: 200px;
+        margin-bottom: 200px;
     }
+
   #contactMe {
       float: left;
       position: relative;
       width: 50%;
-  }
+      text-align: center;
+    }
+
+    #myCV img{
+        display: inline;
+    }
+
     #myCV {
       float: left;
         position: relative;
@@ -264,7 +303,6 @@ textarea {
 progress {
 	width: 400px;
 	height: 22px;
-	/* Important Thing */
 	-webkit-appearance: none;
     -moz-appearance: none;
 	border: none;
