@@ -3,7 +3,6 @@ using System.Web.Mvc;
 
 namespace Portfolio.Controllers
 {
-    using System.Collections.Generic;
     using System.Net.Mail;
 
     using DotNet.Highcharts;
@@ -17,7 +16,7 @@ namespace Portfolio.Controllers
     {
         public ActionResult Index()
         {
-            var technicalCompetences = new string[] { "C#", "SQL", "PHP", "Orchard", "C", "HTML/CSS", "Git/SVN" };
+            var technicalCompetences = new string[] { "C#", "SQL", "PHP", "Orchard", "C", "HTML / CSS", "Git/SVN" };
             var technicalCompetencesRating = new object[] { 8, 7, 9, 6, 8, 9, 7 };
 
             var humanCompetences = new string[]

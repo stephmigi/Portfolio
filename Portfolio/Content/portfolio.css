@@ -116,55 +116,30 @@ textarea {
 
 /* Home */
 
+#title {
+    text-align: center;
+}
+
 .leftBlock {
-    padding-left: 2%;
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.rightBlock {
-    padding-left: 50px;
-}
-#mypic {
-    height: 120px;
-    float: left;
-    margin-right: 15px;
-}
-
-#contactMe {
-    float: left;
     position: relative;
-}
-
-#contactMe img{
-    height: 40px;
-}
-
-.competenceChart {
-    display: block;
-    float: left;
-}
-
-.technicalChart {
-    position: relative;
-    left: 25px;
-}
-
-#myTalentId {
-    position: relative;
-    clear: both;
-    margin-left: 5%;
-    top: 30px;
+    padding-left: 1%;
+    border-right: 1px solid #e7e7e7;
 }
 
 #aboutMe {
     width: 90%;
-    float: left;
     margin-left: 5%;
     margin-right: 10%;
 }
 
-#title {
-    text-align: center;
+#mypic {
+  height: 120px;
+  float: left;
+  margin-right: 15px;
+}
+
+#aboutMe p {
+    display: inline;
 }
 
 #charts {
@@ -175,14 +150,101 @@ textarea {
     margin-right: 35px;
 }
 
+.competenceChart {
+    display: block;
+    float: left;
+}
+
+.technicalChart {
+    position: relative;
+}
+
+#myTalentId {
+    position: relative;
+    clear: both;
+    padding-top: 20px;
+    margin-left: 5%;
+    top: 30px;
+}
+
+.rightBlock {
+    position: relative;
+    padding-left: 50px;
+}
+
+#contactMe img{
+    height: 40px;
+}
+
 #myCV {
-    margin-bottom: 30px;
+    position: absolute;
     z-index: 44564;
+    top: 130px;
 }
 #myCV img {
     display: block;
     width: 50px;
     height: 40px;
+}
+
+#timeline {
+    position: absolute;
+    top: 250px;
+}
+
+@media screen and (max-width: 1220px) {
+    .leftBlock {
+        border: none;
+    }
+  .rightBlock {
+        position: relative;
+        top: 45px;
+      margin-bottom: 200px;
+    }
+  #contactMe {
+      float: left;
+      position: relative;
+      width: 33%;
+  }
+    #myCV {
+      float: left;
+        position: relative;
+        top: 0px;
+        width: 33%;
+  }
+
+    #timeline {
+        position: relative;
+        float: left;
+        top: 0px;
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .leftBlock {
+        border: none;
+    }
+  .rightBlock {
+        position: relative;
+        top: 45px;
+      margin-bottom: 200px;
+    }
+  #contactMe {
+      float: left;
+      position: relative;
+      width: 50%;
+  }
+    #myCV {
+      float: left;
+        position: relative;
+        top: 0px;
+        width: 50%;
+  }
+
+    #timeline {
+        display: none;
+    }
 }
 
 /* Progress bar */
