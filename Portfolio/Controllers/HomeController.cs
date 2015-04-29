@@ -98,7 +98,7 @@ namespace Portfolio.Controllers
             var chart2 = new Highcharts(name).InitChart(new Chart { DefaultSeriesType = ChartTypes.Column })
             .InitChart(new Chart
             {
-                Width = 450,
+                Width = 410,
                 Polar = true,
                 Type = ChartTypes.Line
             })
