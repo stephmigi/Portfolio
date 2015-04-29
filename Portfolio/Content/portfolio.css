@@ -101,10 +101,25 @@ textarea {
     width:25%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
     .realisation-summary {
         height: 120px;
         width: 100%;
+    }
+
+    .realisation-logo {
+        height: 100px;
+    }
+
+    .realisation-detail .competenceblock {
+        float:left;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .realisation-logo {
+        display: none;
     }
 }
 
