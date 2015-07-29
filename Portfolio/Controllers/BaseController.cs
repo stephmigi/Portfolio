@@ -44,6 +44,11 @@ namespace Portfolio.Controllers
                 Thread.CurrentThread.CurrentCulture = new CultureInfo(languageCookie.Value);
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(languageCookie.Value);
             }
+            else
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
+            }
         }
     }
 }

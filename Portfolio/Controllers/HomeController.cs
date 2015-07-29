@@ -86,14 +86,9 @@ namespace Portfolio.Controllers
             }
         }
 
-        private Chart BuildChart()
-        {
-            var chart = new Chart { Type = ChartTypes.Line, Polar = true };
-            return chart;
-        }
-
         private Highcharts GeneratePolarRadarChart(string name, string displayName, string[] categories, object[] values)
         {
+            var url = Url.Action("Index", "Competence");
             var chart2 = new Highcharts(name).InitChart(new Chart { DefaultSeriesType = ChartTypes.Column })
             .InitChart(new Chart
             {
@@ -127,6 +122,17 @@ namespace Portfolio.Controllers
                 Labels = new YAxisLabels
                 {
                     Enabled = false
+                }
+            })
+            .SetPlotOptions(new PlotOptions
+            {
+                Series = new PlotOptionsSeries
+                {
+                    Point = new PlotOptionsSeriesPoint
+                    {
+
+                        Events = new PlotOptionsSeriesPointEvents { Click = "function(){ window.location.href = '" + url + "'; }" }
+                    }
                 }
             })
             .SetLegend(new Legend
